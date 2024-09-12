@@ -3,7 +3,13 @@ import { createRoot } from "react-dom/client"
 import { Provider } from "react-redux"
 import App from "./App"
 import { store } from "./app/store"
-import "./index.css"
+
+import '../src/styles/global.css';
+
+// Import Bootstrap CSS and JS
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap-social/bootstrap-social.css';
 
 const container = document.getElementById("root")
 
