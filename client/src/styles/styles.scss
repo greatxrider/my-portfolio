@@ -107,11 +107,37 @@
     .navToggler:hover {
         color: #1777E5 !important;
     }
+
+    .career-card-item {
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .rounded-circle {
+            width: 140px;
+            height: 140px;
+        }
+
+        .experience-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                text-align: center;
+            }
+        }
+    }
 }
 
 @media (max-width: 1200px) {
     .about-content {
         flex-wrap: wrap;
+    }
+
+    .career-history {
+        flex-wrap: wrap;
+        gap: 20px;
     }
 }
 
@@ -424,5 +450,227 @@
     h5: {
         font-size: 20px;
         font-weight: bold;
+    }
+}
+
+// Experiences and Educations
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: black;
+}
+
+.experience-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    color: white;
+}
+
+.career-card-item {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 990px;
+    padding: 40px;
+    border-radius: 12px;
+    background-color: #111111;
+
+    h5,
+    p,
+    button {
+        color: white;
+    }
+
+    .avatar-container {
+        align-content: center;
+    }
+
+    .experience-details {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 528px;
+
+        h5 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 22.5px;
+            letter-spacing: 0px;
+        }
+    }
+
+    .experience-actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+
+        .experience-request-button,
+        .experience-resume-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            width: 198px;
+            height: 48px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 14px;
+            outline: none;
+            border: none;
+        }
+
+        .experience-request-button {
+            background-color: #1777E5;
+            color: white;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #2586f5;
+                box-shadow: 0 0 5px 2.5px rgba(9, 67, 133, 0.5),
+                    0 0 10px 5px #0068df;
+            }
+
+            &:active {
+                background-color: #0068df;
+            }
+        }
+
+        .experience-resume-button {
+            background-color: #e7e7e7;
+            color: black;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #e7e7e7;
+                box-shadow: 0 0 5px 2.5px rgb(255, 255, 255),
+                    0 0 10px 5px #ffffff;
+            }
+
+            &:active {
+                background-color: #c0c0c0;
+            }
+        }
+    }
+}
+
+.career-history {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 18px;
+
+    h5 {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .education-item,
+    .work-history,
+    .technologies-tools {
+        width: 340px;
+    }
+
+    .technologies-tools {
+        .technologies-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .technology-item {
+            width: 96px;
+            height: 96px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            background-color: white;
+            border-radius: 4.5px;
+        }
+    }
+
+    .education-item {
+
+        .education-title,
+        .education-date,
+        .education-institution {
+            color: #1777E5;
+        }
+
+        .education-date-institution {
+            display: flex;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        .education-program {
+            font-weight: bold;
+            color: white;
+        }
+
+        .education-coursework {
+            font-size: 12px;
+            color: white;
+        }
+    }
+
+    .work-history {
+
+        .work-history-title,
+        .work-date,
+        .work-company {
+            color: #FF5F49;
+        }
+
+        .work-date-company {
+            display: flex;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        .work-position {
+            font-weight: bold;
+            color: white;
+        }
+
+        .work-description {
+            font-size: 12px;
+            color: white;
+        }
+    }
+
+    .technologies-tools {
+        .technologies-title {
+            color: #2DB24A;
+        }
+
+        .technologies-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            h6 {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .education-item,
+    .work-history,
+    .technologies-tools {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 }
