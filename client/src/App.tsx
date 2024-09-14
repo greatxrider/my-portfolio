@@ -10,6 +10,7 @@ import Experiences from "./components/Experiences/Experiences";
 import Certifications from "./components/Certifications/Certifications";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Services from "./components/MyServices/Services";
+import Featured from "./components/Featured/Featured";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Certifications />
       <Portfolio />
       <Services />
+      <Featured />
     </div>
   )
 }

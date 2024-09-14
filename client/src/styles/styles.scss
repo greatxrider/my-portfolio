@@ -992,3 +992,123 @@
         }
     }
 }
+
+// Featured Section
+
+.featured-content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 90px 40px;
+    background-color: black;
+
+    .featured-title {
+        text-align: center;
+        font-size: 2rem;
+        text-decoration: underline;
+        color: white;
+    }
+
+    .featured-description {
+        p {
+            color: white;
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+    }
+
+    //  MacPro and Iphone
+    .devices-container {
+        position: relative;
+        width: 600px;
+        height: auto;
+    }
+
+    .mac-screen-image {
+        position: absolute;
+        top: 12%;
+        left: 12%;
+        bottom: 40%;
+        width: 455px;
+        height: 290px;
+        z-index: 1;
+    }
+
+    .macbook-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        z-index: 2;
+    }
+
+    .iphone-container {
+        position: absolute;
+        top: 40%;
+        right: 1%;
+        width: 185px;
+        height: auto;
+        z-index: 3;
+    }
+
+    .iphone-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        z-index: 2;
+    }
+
+    .iphone-screen-image {
+        position: absolute;
+        top: 1%;
+        left: 2px;
+        width: 180px;
+        height: 365px;
+        z-index: 1;
+        border-radius: 10%;
+    }
+
+    //  IMac and Iphone
+    .imac-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        z-index: 2;
+    }
+
+    .imac-screen-image {
+        position: absolute;
+        top: 7%;
+        left: 5%;
+        width: 540px;
+        height: 310px;
+        z-index: 1;
+    }
+
+    .featured-project-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 300px;
+
+        .project {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+            .project-description {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 125px;
+                width: 100%;
+
+                h5, p {
+                    color: white;
+                }
+            }
+        }
+    }
+}
