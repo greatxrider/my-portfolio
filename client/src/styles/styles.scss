@@ -705,7 +705,8 @@
         p {
             color: white;
             text-align: center;
-            width: 803px;
+            max-width: 803px;
+            width: 100%
         }
     }
 
@@ -766,6 +767,7 @@
 
     .portfolio-stats {
         display: flex;
+        flex-wrap: wrap;
         gap: 40px;
 
         .intime-projects-container,
@@ -820,7 +822,8 @@
 
     .portfolio-description {
         p {
-            width: 600px;
+            width: 100%;
+            max-width: 600px;
             text-align: center;
             color: white;
         }
