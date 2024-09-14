@@ -8,7 +8,7 @@ const Featured = () => {
             <div className="featured-project-container">
                 <div className="project">
                     <div className="devices-container">
-                        <img src="" alt="Screen" className="mac-screen-image" />
+                        <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="Screen" className="mac-screen-image" />
                         <img src="/src/app/assets/png/macpro.png" alt="MacBook Pro" className="macbook-image" />
                         <div className="iphone-container">
                             <img src="/src/app/assets/png/iphone.png" alt="Iphone" className="iphone-image" />
