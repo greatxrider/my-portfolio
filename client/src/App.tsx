@@ -6,6 +6,7 @@ import logo from "./logo.svg"
 import Header from "./components/Header/Header";
 import Headline from "./components/Headline/Headline";
 import About from "./components/About/About";
+import Experiences from "./components/Experiences/Experiences";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Header />
       <Headline />
       <About />
+      <Experiences />
     </div>
   )
 }

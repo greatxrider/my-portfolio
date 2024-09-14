@@ -5,14 +5,13 @@ import MobileDev from "../Logos/MobileDev"
 const About = () => {
     return (
         <div className="about-container">
-            <h1>About Me</h1>
+            <h1 className="about-title">About Me</h1>
             <div className="about-content">
                 <div className="experience-section">
-                    <img src="/src/app/assets/png/clipPath.png" alt="Clip Path" />
                     <div className="overlay-text">
-                        <h1>1+</h1>
-                        <p>Years working experience</p>
+                        <h1 className="work-exp">1+</h1>
                     </div>
+                    <h2>Years working experience</h2>
                 </div>
                 <div className="content-container">
                     <div className="description-section">
@@ -29,30 +28,30 @@ const About = () => {
                     </div>
                     <div className="services-section">
                         <div className="full-stack">
-                            <h5>Full Stack Development</h5>
                             <FullStack />
+                            <h5>Full Stack Development</h5>
                             <p>
                                 Comprehensive web solutions from front-end to back-end
                                 development
                             </p>
                         </div>
                         <div className="ui-ux">
-                            <h5>UI/UX Design</h5>
                             <UiUx />
+                            <h5>UI/UX Design</h5>
                             <p>
                                 Creating intuitive and engaging user interfaces and experiences
                             </p>
                         </div>
                         <div className="mobile-app-dev">
-                            <h5>Mobile App Development</h5>
                             <MobileDev />
+                            <h5>Mobile App Development</h5>
                             <p>Innovative mobile apps for iOS and Android platforms</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default About
+export default About;
