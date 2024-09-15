@@ -36,7 +36,7 @@ const Experiences = () => {
             </div>
             <div className="career-history">
                 <div className="education-item">
-                    <h6 className="education-title">—— EDUCATION</h6>
+                    <h6 className="education-title">— EDUCATION</h6>
                     <div className="education-info-container">
                         <div className="education-date-institution">
                             <p className="education-date">February 2024 - July 2024</p>
@@ -47,7 +47,7 @@ const Experiences = () => {
                     </div>
                 </div>
                 <div className="work-history">
-                    <h6 className="work-history-title">—— WORK HISTORY</h6>
+                    <h6 className="work-history-title">— WORK HISTORY</h6>
                     <div className="work-info-container">
                         <div className="work-date-company">
                             <p className="work-date">February 2024 - July 2024</p>
@@ -58,7 +58,7 @@ const Experiences = () => {
                     </div>
                 </div>
                 <div className="technologies-tools">
-                    <h6 className="technologies-title">—— TECHNOLOGIES AND TOOLS</h6>
+                    <h6 className="technologies-title">— TECHNOLOGIES AND TOOLS</h6>
                     <div className="technologies-info-container">
                         <div className="technologies-list">
                             <div className="technology-item">
