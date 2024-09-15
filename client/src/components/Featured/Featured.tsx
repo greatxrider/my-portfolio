@@ -12,7 +12,7 @@ const Featured = () => {
                         <img src="/src/app/assets/png/macpro.png" alt="MacBook Pro" className="macbook-image" />
                         <div className="iphone-container">
                             <img src="/src/app/assets/png/iphone.png" alt="Iphone" className="iphone-image" />
-                            <img src="" alt="iPhone Screen" className="iphone-screen-image" />
+                            <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="iPhone Screen" className="iphone-screen-image" />
                         </div>
                     </div>
                     <div className="project-description">
@@ -22,11 +22,11 @@ const Featured = () => {
                 </div>
                 <div className="project">
                     <div className="devices-container">
-                        <img src="" alt="Screen" className="imac-screen-image" />
+                        <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="Screen" className="imac-screen-image" />
                         <img src="/src/app/assets/png/iMacPro.png" alt="iMac Pro" className="imac-image" />
                         <div className="iphone-container">
                             <img src="/src/app/assets/png/iphone.png" alt="Iphone" className="iphone-image" />
-                            <img src="" alt="iPhone Screen" className="iphone-screen-image" />
+                            <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="iPhone Screen" className="iphone-screen-image" />
                         </div>
                     </div>
                     <div className="project-description">
