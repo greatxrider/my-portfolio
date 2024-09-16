@@ -12,6 +12,7 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Services from "./components/MyServices/Services";
 import Featured from "./components/Featured/Featured";
 import Testimonials from "./components/Testimonials/Testimonials";
+import Blog from "./components/Blog/Blog";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <Services />
       <Featured />
       <Testimonials />
+      <Blog />
     </div>
   )
 }
