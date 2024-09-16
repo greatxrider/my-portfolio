@@ -99,6 +99,10 @@ body,
     font-family: 'DM Sans', sans-serif;
 }
 
+body {
+    background-color: #131313 !important;
+}
+
 html,
 body {
     overflow-x: hidden;
@@ -1921,7 +1925,7 @@ footer {
 
         .fa-icon {
             color: white;
-            font-size: 15px;
+            font-size: 18px;
         }
     }
 
