@@ -13,6 +13,8 @@ import Services from "./components/MyServices/Services";
 import Featured from "./components/Featured/Featured";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Blog from "./components/Blog/Blog";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -27,6 +29,8 @@ const App = () => {
       <Featured />
       <Testimonials />
       <Blog />
+      <Contact />
+      <Footer />
     </div>
   )
 }
