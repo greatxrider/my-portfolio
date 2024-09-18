@@ -2142,6 +2142,22 @@ body {
     }
 }
 
+.certifications-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 150px 40px 40px 45px;
+    background-color: black;
+
+    .certifications-title {
+        text-align: center;
+        font-size: 2rem;
+        text-decoration: underline;
+        color: white;
+    }
+}
+
 footer {
     background-color: black;
 
