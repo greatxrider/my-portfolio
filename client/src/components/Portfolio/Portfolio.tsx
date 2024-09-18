@@ -63,9 +63,9 @@ const Portfolio = () => {
                     <img src="https://via.placeholder.com/150" alt="Placeholder" />
                 </div>
             </div>
-            <div className="portfolio-more">
+            {/* <div className="portfolio-more">
                 <button className="more-button">See More</button>
-            </div>
+            </div> */}
         </div>
     );
 }

@@ -1,35 +1,25 @@
-import { Counter } from "./features/counter/Counter"
-import { Quotes } from "./features/quotes/Quotes"
-import logo from "./logo.svg"
-
 //components
+import { Route, Routes, Navigate } from "react-router-dom";
+import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
-import Headline from "./components/Headline/Headline";
-import About from "./components/About/About";
-import Experiences from "./components/Experiences/Experiences";
-import Certifications from "./components/Certifications/Certifications";
-import Portfolio from "./components/Portfolio/Portfolio";
-import Services from "./components/MyServices/Services";
-import Featured from "./components/Featured/Featured";
-import Testimonials from "./components/Testimonials/Testimonials";
-import Blog from "./components/Blog/Blog";
-import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import Certificates from "./components/Certificates/Certificates";
+import MyStory from "./components/MyStory/MyStory";
+import PortfolioContainer from "./components/Portfolio/PortfolioContainer";
 
 const App = () => {
   return (
     <div className="container">
       <Header />
-      <Headline />
-      <About />
-      <Experiences />
-      <Certifications />
-      <Portfolio />
-      <Services />
-      <Featured />
-      <Testimonials />
-      <Blog />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="aboutme" element={<MyStory />} />
+        <Route path="certificates" element={<Certificates />} >
+          <Route path="*" element={<Navigate replace to="/404" />} />
+        </Route>
+        <Route path="*" element={<Navigate replace to="/404" />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes>
       <Footer />
     </div>
   )
