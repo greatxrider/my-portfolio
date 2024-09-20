@@ -1,0 +1,17 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "myPortfolio-restapi.db"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "myPortfolio-restapi.db"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "myPortfolio-restapi",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
