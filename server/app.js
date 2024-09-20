@@ -1,13 +1,28 @@
 var createError = require('http-errors');
-var express = require('express');
+const cors = require('cors');
+const express = require('express');
+const morgan = require('morgan');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const sequelize = require('./models').sequelize;
 
+// variable to enable global error logging
+const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
+
+// setup Routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const educationRouter = require('./routes/education');
 
+// Create the Express app
 var app = express();
+
+// Enable All CORS Requests
+app.use(cors());
+
+// setup morgan which gives us http request logging
+app.use(morgan('dev'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,15 +35,49 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/education', educationRouter);
+
+/**
+ * Test the database connection.
+ */
+(async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Database connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+})();
+
+/**
+ * Send 404 if no other route matched.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ */
+app.use((req, res) => {
+  res.status(404).json({
+    message: 'Route Not Found',
+  });
+});
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
-// error handler
-app.use(function(err, req, res, next) {
+/**
+ * Error handler.
+ * @param {Object} err - The error object.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {Function} next - The next middleware function.
+ */
+app.use(function (err, req, res, next) {
+  if (enableGlobalErrorLogging) {
+    console.error(`Global error handler: ${JSON.stringify(err.stack)}`);
+  }
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
