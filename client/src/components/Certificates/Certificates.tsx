@@ -2,6 +2,7 @@ import IbmCert from "./IBMCert";
 import NucampCert from "./NucampCert";
 import TreeHouseCert from "./TreeHouseCert";
 import YsuCert from "./YsuCert";
+import ImageModal from "./ImageModal";
 
 const Certificates = () => {
     return (

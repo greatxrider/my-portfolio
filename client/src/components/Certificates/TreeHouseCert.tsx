@@ -8,10 +8,11 @@ const TreeHouseCert = () => {
                         <img src="/src/app/assets/png/certificates/fullStackJavascript.png" className="card-img-top" alt="..." />
                         <div className="card-body">
                             <h5 className="card-title">Card title</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            <p className="card-text">ID:</p>
+                            <p className="card-text">URL:</p>
                         </div>
                         <div className="card-footer">
-                            <small className="text-body-secondary">Last updated 3 mins ago</small>
+                            <small className="text-body-secondary">September 16, 2024</small>
                         </div>
                     </div>
                 </div>
