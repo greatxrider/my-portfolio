@@ -12,8 +12,15 @@ const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'tr
 
 // setup Routers
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const educationRouter = require('./routes/education');
+var usersRouter = require('./routes/usersRouter');
+const educationRouter = require('./routes/educationRouter');
+const badgesRouter = require('./routes/badgesRouter');
+const projectsRouter = require('./routes/projectsRouter');
+const skillsRouter = require('./routes/skillsRouter');
+const testimonialsRouter = require('./routes/testimonialsRouter');
+const workRouter = require('./routes/workRouter');
+const blogsRouter = require('./routes/blogsRouter');
+const certificatesRouter = require('./routes/certificatesRouter');
 
 // Create the Express app
 var app = express();
@@ -37,6 +44,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/education', educationRouter);
+app.use('/api/badges', badgesRouter);
+app.use('/api/projects', projectsRouter);
+app.use('/api/skills', skillsRouter);
+app.use('/api/testimonials', testimonialsRouter);
+app.use('/api/work', workRouter);
+app.use('/api/blogs', blogsRouter);
+app.use('/api/certificates', certificatesRouter);
 
 /**
  * Test the database connection.
