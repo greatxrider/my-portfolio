@@ -11,17 +11,104 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Work.belongsTo(models.User, {
+        as: 'user',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
     }
   }
   Work.init({
-    company: DataTypes.STRING,
-    jobTitle: DataTypes.STRING,
-    description: DataTypes.STRING,
-    city: DataTypes.STRING,
-    province: DataTypes.STRING,
-    country: DataTypes.STRING,
-    start: DataTypes.DATE,
-    end: DataTypes.DATE
+    company: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A company is required',
+        },
+        notEmpty: {
+          msg: 'Please company a school',
+        },
+      },
+    },
+    jobTitle: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A job title is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a job title',
+        },
+      },
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A description is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a description',
+        },
+      },
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A city is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a city',
+        },
+      },
+    },
+    province: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A province is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a province',
+        },
+      },
+    },
+    country: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A country is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a country',
+        },
+      },
+    },
+    start: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Start date is required',
+        },
+        isDate: {
+          msg: 'start date must be a valid date',
+        },
+      },
+    },
+    end: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    }
   }, {
     sequelize,
     modelName: 'Work',

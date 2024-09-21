@@ -1,5 +1,5 @@
 const { asyncHandler } = require('./async-handler');
-const { User, Course } = require('../models');
+const { Education } = require('../models');
 
 /**
  * Middleware to fetch course and check ownership.
@@ -7,26 +7,17 @@ const { User, Course } = require('../models');
  * @param {Object} res - The response object.
  * @param {Function} next - The next middleware function.
  */
-exports.fetchCourseAndCheckOwnership = asyncHandler(async (req, res, next) => {
-    const course = await Course.findByPk(req.params.id, {
-        attributes: ['id', 'title', 'description', 'estimatedTime', 'materialsNeeded', 'userId'],
-        include: [
-            {
-                model: User,
-                as: 'user',
-                attributes: ['id', 'firstName', 'lastName', 'emailAddress'],
-            },
-        ],
-    });
+exports.fetchEducationAndCheckOwnership = asyncHandler(async (req, res, next) => {
+    const education = await Education.findByPk(req.params.id);
 
-    if (course) {
-        if (course.userId === req.currentUser.id) {
-            req.course = course;
+    if (education) {
+        if (education.userId === req.currentUser.id) {
+            req.education = education;
             next();
         } else {
-            res.status(403).json({ message: 'Forbidden: You do not own this course' });
+            res.status(403).json({ message: 'Forbidden: You do not own this education' });
         }
     } else {
-        res.status(404).json({ message: 'Course not found' });
+        res.status(404).json({ message: 'Education not found' });
     }
 });

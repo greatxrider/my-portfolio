@@ -25,8 +25,16 @@ module.exports = (sequelize) => {
     */
     static associate(models) {
       // define association here
-      User.hasMany(models.Course, {
-        as: 'courses',
+      User.hasMany(models.Education, {
+        as: 'education',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
+
+      User.hasMany(models.Work, {
+        as: 'work',
         foreignKey: {
           fieldName: 'userId',
           allowNull: false,

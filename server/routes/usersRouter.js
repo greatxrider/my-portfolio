@@ -21,16 +21,7 @@ const { asyncHandler } = require('../middleware/async-handler');
  * @param {Object} res - The response object.
  */
 usersRouter.get('/', authenticateUser, asyncHandler(async (req, res) => {
-  const user = await User.findByPk(req.currentUser.id, {
-    attributes: ['id', 'firstName', 'lastName', 'emailAddress'],
-    include: [
-      {
-        model: Course,
-        as: 'courses',
-        attributes: ['id', 'title', 'description', 'estimatedTime', 'materialsNeeded', 'userId']
-      },
-    ],
-  });
+  const user = await User.findByPk(req.currentUser.id);
 
   if (user) {
     res.status(200).json(user);

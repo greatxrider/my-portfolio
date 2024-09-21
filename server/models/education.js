@@ -11,16 +11,97 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Education.belongsTo(models.User, {
+        as: 'user',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
     }
   }
   Education.init({
-    school: DataTypes.STRING,
-    degree: DataTypes.STRING,
-    courseWork: DataTypes.STRING,
-    city: DataTypes.STRING,
-    province: DataTypes.STRING,
-    start: DataTypes.DATE,
-    end: DataTypes.DATE
+    school: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A school is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a school',
+        },
+      },
+    },
+    degree: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A degree is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a degree',
+        },
+      },
+    },
+    courseWork: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A course work is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a course work',
+        },
+      },
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A city is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a city',
+        },
+      },
+    },
+    province: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A province is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a province',
+        },
+      },
+    },
+    start: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Start date is required',
+        },
+        isDate: {
+          msg: 'start date must be a valid date',
+        },
+      },
+    },
+    end: {
+      type: DataTypes.DATE,
+      allowNull: true,
+      validate: {
+        isDate: {
+          msg: 'end date must be a valid date',
+        },
+      },
+    },
   }, {
     sequelize,
     modelName: 'Education',
