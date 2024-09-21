@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCircleCheck } from "@fortawesome/free-regular-svg-icons";
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Portfolio = () => {
     return (
@@ -38,30 +39,13 @@ const Portfolio = () => {
                 </p>
             </div>
             <div className="portfolio-filters">
-                <button className="filter-button all">All</button>
-                <button className="filter-button uiux">UI/UX</button>
-                <button className="filter-button webdev">Web Development</button>
-                <button className="filter-button mobileapp">Mobile App Development</button>
+                <NavLink to='all' className="filter-button all">All</NavLink>
+                <NavLink to='uiux' className="filter-button uiux">UI/UX</NavLink>
+                <NavLink to='web' className="filter-button webdev">Web Development</NavLink>
+                <NavLink to='mobile' className="filter-button mobileapp">Mobile App Development</NavLink>
             </div>
             <div className="portfolio-gallery">
-                <div className="gallery-item">
-                    <img src="https://via.placeholder.com/150" alt="Placeholder" />
-                </div>
-                <div className="gallery-item">
-                    <img src="https://via.placeholder.com/150" alt="Placeholder" />
-                </div>
-                <div className="gallery-item">
-                    <img src="https://via.placeholder.com/150" alt="Placeholder" />
-                </div>
-                <div className="gallery-item">
-                    <img src="https://via.placeholder.com/150" alt="Placeholder" />
-                </div>
-                <div className="gallery-item">
-                    <img src="https://via.placeholder.com/150" alt="Placeholder" />
-                </div>
-                <div className="gallery-item">
-                    <img src="https://via.placeholder.com/150" alt="Placeholder" />
-                </div>
+                <Outlet />
             </div>
             {/* <div className="portfolio-more">
                 <button className="more-button">See More</button>

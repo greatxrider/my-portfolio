@@ -7,7 +7,7 @@ const Header = () => {
         <header>
             <nav className="container navbar custom-navbar navbar-expand-lg navbar--height fixed-top">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#"><Logo /></a>
+                    <a className="navbar-brand" href="/"><Logo /></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <FontAwesomeIcon className="navToggler" icon={faBars} style={{ color: "#ffffff", fontSize: 25 }} />
                     </button>

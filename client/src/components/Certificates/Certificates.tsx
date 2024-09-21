@@ -1,4 +1,4 @@
-import IbmCert from "./IBMCert";
+import IbmCert from "./IbmCert";
 import NucampCert from "./NucampCert";
 import TreeHouseCert from "./TreeHouseCert";
 import YsuCert from "./YsuCert";
@@ -10,7 +10,7 @@ const Certificates = () => {
             <div className="certifications-content">
                 <div className="certifications-container">
                     <h1 className="certifications-title">Certifications</h1>
-                    <p>I am certified to serve you.</p>
+                    <p className="certifications-description">I am certified to serve you.</p>
                     <div className="certifications">
                         <IbmCert />
                         <NucampCert />
