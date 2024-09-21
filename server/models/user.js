@@ -40,6 +40,14 @@ module.exports = (sequelize) => {
           allowNull: false,
         },
       });
+
+      User.hasMany(models.Skills, {
+        as: 'skills',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
     };
   };
 

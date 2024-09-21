@@ -1,4 +1,5 @@
 'use strict';
+
 const {
   Model
 } = require('sequelize');
@@ -11,11 +12,40 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Skills.belongsTo(models.User, {
+        as: 'user',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
     }
   }
   Skills.init({
-    technology: DataTypes.STRING,
-    svgContent: DataTypes.STRING
+    technology: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A skill is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a skill',
+        },
+      },
+    },
+    svgContent: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A svgContent is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a svgContent',
+        },
+      },
+    }
   }, {
     sequelize,
     modelName: 'Skills',

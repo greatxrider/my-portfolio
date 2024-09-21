@@ -1,4 +1,5 @@
 'use strict';
+
 const {
   Model
 } = require('sequelize');
@@ -29,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'A company is required',
         },
         notEmpty: {
-          msg: 'Please company a school',
+          msg: 'Please provide a company',
         },
       },
     },
