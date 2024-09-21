@@ -738,8 +738,13 @@ body {
 
         .education-date-institution {
             display: flex;
+            flex-direction: column;
             justify-content: flex-start;
             gap: 5px;
+
+            .education-institution {
+                margin-bottom: 0;
+            }
         }
 
         .education-program {
@@ -763,8 +768,13 @@ body {
 
         .work-date-company {
             display: flex;
+            flex-direction: column;
             justify-content: flex-start;
             gap: 5px;
+
+            .work-company {
+                margin-bottom: 0;
+            }
         }
 
         .work-position {
