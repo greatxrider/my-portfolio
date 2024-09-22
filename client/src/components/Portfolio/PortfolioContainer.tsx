@@ -1,18 +1,12 @@
-const PortfolioContainer = ({ count }) => {
-    const galleryItems = [];
-
-    for (let i = 0; i < count; i++) {
-        galleryItems.push(
-            <div className="gallery-item" key={i}>
-                <img src={`https://via.placeholder.com/150?text=Item+${i + 1}`} alt={`Placeholder ${i + 1}`} />
-            </div>
-        );
-    }
+const PortfolioContainer = ({ categories }) => {
+    const projects = categories.projects;
 
     return (
-        <>
-            {galleryItems}
-        </>
+        projects.map((project, i) => (
+            <div className="gallery-item" key={i}>
+                <img src={project.imageUrlDesktop} alt={`Placeholder ${i + 1}`} />
+            </div>
+        ))
     );
 }
 
