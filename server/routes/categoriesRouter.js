@@ -2,15 +2,15 @@
 
 const express = require('express');
 
-const projectsRouter = express.Router();
+const categoriesRouter = express.Router();
 const { Projects, Categories, User } = require('../models');
 const { authenticateUser } = require('../middleware/auth-user');
 const { asyncHandler } = require('../middleware/async-handler');
 const { fetchResourceAndCheckOwnership } = require('../middleware/fetch-resource-and-check');
 
-projectsRouter.route('/')
+categoriesRouter.route('/')
     .get(asyncHandler(async (req, res) => {
-        const projects = await Projects.findAll({
+        const categories = await Categories.findAll({
             include: [
                 {
                     model: User,
@@ -18,20 +18,20 @@ projectsRouter.route('/')
                     attributes: ['id', 'firstName', 'lastName', 'emailAddress'],
                 },
                 {
-                    model: Categories,
-                    as: 'category',
-                    attributes: ['id', 'name', 'description'],
+                    model: Projects,
+                    as: 'projects',
+                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
                 },
             ]
         });
 
-        res.status(200).json(projects);
-        console.log(projects.map(project => project.get({ plain: true })));
+        res.status(200).json(categories);
+        console.log(categories.map(category => category.get({ plain: true })));
     }))
     .post(authenticateUser, asyncHandler(async (req, res) => {
         try {
-            const project = await Projects.create(req.body);
-            res.status(201).location(`/projects/${project.id}`).end();
+            const category = await Categories.create(req.body);
+            res.status(201).location(`/categories/${category.id}`).end();
         } catch (error) {
             console.log('ERROR: ', error.name);
 
@@ -44,9 +44,9 @@ projectsRouter.route('/')
         }
     }));
 
-projectsRouter.route('/:id')
+categoriesRouter.route('/:id')
     .get(asyncHandler(async (req, res) => {
-        const project = await Projects.findByPk(req.params.id, {
+        const category = await Categories.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
@@ -54,20 +54,20 @@ projectsRouter.route('/:id')
                     attributes: ['id', 'firstName', 'lastName', 'emailAddress'],
                 },
                 {
-                    model: Categories,
-                    as: 'categories',
-                    attributes: ['id', 'name', 'description'],
+                    model: Projects,
+                    as: 'projects',
+                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
                 },
             ]
         });
 
-        if (project) {
-            res.status(200).json(project);
+        if (category) {
+            res.status(200).json(category);
         } else {
-            res.status(404).json({ message: 'Project not found' });
+            res.status(404).json({ message: 'Category not found' });
         }
     }))
-    .put(authenticateUser, fetchResourceAndCheckOwnership(Projects), asyncHandler(async (req, res) => {
+    .put(authenticateUser, fetchResourceAndCheckOwnership(Categories), asyncHandler(async (req, res) => {
         try {
             await req.resource.update(req.body);
             res.status(204).end();
@@ -82,7 +82,7 @@ projectsRouter.route('/:id')
             }
         }
     }))
-    .delete(authenticateUser, fetchResourceAndCheckOwnership(Projects), asyncHandler(async (req, res) => {
+    .delete(authenticateUser, fetchResourceAndCheckOwnership(Categories), asyncHandler(async (req, res) => {
         try {
             await req.resource.destroy();
             res.status(204).end();
@@ -98,4 +98,4 @@ projectsRouter.route('/:id')
         }
     }));
 
-module.exports = projectsRouter;
+module.exports = categoriesRouter;

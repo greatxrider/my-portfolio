@@ -16,6 +16,7 @@ var usersRouter = require('./routes/usersRouter');
 const educationRouter = require('./routes/educationRouter');
 const badgesRouter = require('./routes/badgesRouter');
 const projectsRouter = require('./routes/projectsRouter');
+const categoriesRouter = require('./routes/categoriesRouter');
 const skillsRouter = require('./routes/skillsRouter');
 const testimonialsRouter = require('./routes/testimonialsRouter');
 const workRouter = require('./routes/workRouter');
@@ -45,12 +46,13 @@ app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/education', educationRouter);
 app.use('/api/badges', badgesRouter);
-app.use('/api/projects', projectsRouter);
 app.use('/api/skills', skillsRouter);
 app.use('/api/testimonials', testimonialsRouter);
 app.use('/api/work', workRouter);
 app.use('/api/blogs', blogsRouter);
 app.use('/api/certificates', certificatesRouter);
+app.use('/api/categories', categoriesRouter);
+app.use('/api/projects', projectsRouter);
 
 /**
  * Test the database connection.
