@@ -20,7 +20,7 @@ categoriesRouter.route('/')
                 {
                     model: Projects,
                     as: 'projects',
-                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
+                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'deviceType', 'deviceImageUrl', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
                 },
             ]
         });
@@ -56,7 +56,7 @@ categoriesRouter.route('/:id')
                 {
                     model: Projects,
                     as: 'projects',
-                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
+                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'deviceType', 'deviceImageUrl', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
                 },
             ]
         });

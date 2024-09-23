@@ -76,13 +76,13 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-    deviceImageUrl: {
+    deviceType: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: '/src/app/assets/png/macpro.png', // Set your default value here
+      defaultValue: 'macpro',
       validate: {
         notNull: {
-          msg: 'A device image url is required',
+          msg: 'A device type is required',
         },
         notEmpty: {
           msg: 'Please provide a device image url',
