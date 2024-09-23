@@ -64,6 +64,14 @@ module.exports = (sequelize) => {
           allowNull: false,
         },
       });
+
+      User.hasMany(models.Testimonials, {
+        as: 'testimonials',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
     };
   };
 

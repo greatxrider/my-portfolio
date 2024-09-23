@@ -38,6 +38,9 @@ module.exports = (sequelize, DataTypes) => {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: {
+        msg: 'The Project you entered already exists',
+      },
       validate: {
         notNull: {
           msg: 'A title is required',

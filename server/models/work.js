@@ -37,6 +37,9 @@ module.exports = (sequelize, DataTypes) => {
     jobTitle: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: {
+        msg: 'The Job Title you entered already exists',
+      },
       validate: {
         notNull: {
           msg: 'A job title is required',

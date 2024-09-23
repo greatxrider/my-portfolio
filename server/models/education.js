@@ -36,6 +36,9 @@ module.exports = (sequelize, DataTypes) => {
     degree: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: {
+        msg: 'The degree you entered already exists',
+      },
       validate: {
         notNull: {
           msg: 'A degree is required',
