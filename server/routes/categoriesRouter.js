@@ -3,7 +3,7 @@
 const express = require('express');
 
 const categoriesRouter = express.Router();
-const { Projects, Categories, User } = require('../models');
+const { Projects, Categories, User, Skills } = require('../models');
 const { authenticateUser } = require('../middleware/auth-user');
 const { asyncHandler } = require('../middleware/async-handler');
 const { fetchResourceAndCheckOwnership } = require('../middleware/fetch-resource-and-check');
@@ -20,8 +20,18 @@ categoriesRouter.route('/')
                 {
                     model: Projects,
                     as: 'projects',
-                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'deviceType', 'deviceImageUrl', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
-                },
+                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'deviceType', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
+                    include: [
+                        {
+                            model: Skills,
+                            as: 'technologies',
+                            through: {
+                                // this removes the through model properties from being included
+                                attributes: [],
+                            },
+                        }
+                    ]
+                }
             ]
         });
 
@@ -56,8 +66,18 @@ categoriesRouter.route('/:id')
                 {
                     model: Projects,
                     as: 'projects',
-                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'deviceType', 'deviceImageUrl', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
-                },
+                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'deviceType', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
+                    include: [
+                        {
+                            model: Skills,
+                            as: 'technologies',
+                            through: {
+                                // this removes the through model properties from being included
+                                attributes: [],
+                            },
+                        }
+                    ]
+                }
             ]
         });
 

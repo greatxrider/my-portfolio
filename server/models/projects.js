@@ -25,6 +25,13 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
         },
       });
+
+      Projects.belongsToMany(models.Skills, {
+        as: 'technologies',
+        through: 'ProjectTechnologies',
+        foreignKey: 'projectId',
+        otherKey: 'skillsId',
+      });
     }
   }
   Projects.init({

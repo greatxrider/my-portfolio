@@ -3,7 +3,7 @@
 const express = require('express');
 
 const skillsRouter = express.Router();
-const { Skills, User } = require('../models');
+const { Skills, User, Projects } = require('../models');
 const { authenticateUser } = require('../middleware/auth-user');
 const { asyncHandler } = require('../middleware/async-handler');
 const { fetchResourceAndCheckOwnership } = require('../middleware/fetch-resource-and-check');
@@ -16,6 +16,15 @@ skillsRouter.route('/')
                     model: User,
                     as: 'user',
                     attributes: ['id', 'firstName', 'lastName', 'emailAddress'],
+                },
+                {
+                    model: Projects,
+                    as: 'projects',
+                    attributes: ['id', 'title', 'description', 'imageUrlDesktop', 'imageUrlMobile', 'deviceType', 'githubLink', 'liveLink', 'categoryName', 'isFeatured', 'categoryId', 'userId'],
+                    through: {
+                        // this removes the through model properties from being included
+                        attributes: [],
+                    },
                 },
             ]
         });

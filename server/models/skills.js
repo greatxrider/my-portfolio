@@ -19,12 +19,22 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
         },
       });
+
+      Skills.belongsToMany(models.Projects, {
+        as: 'projects',
+        through: 'ProjectTechnologies',
+        foreignKey: 'skillsId',
+        otherKey: 'projectId',
+      });
     }
   }
   Skills.init({
     technology: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: {
+        msg: 'The technology you entered already exists',
+      },
       validate: {
         notNull: {
           msg: 'A skill is required',
@@ -37,6 +47,9 @@ module.exports = (sequelize, DataTypes) => {
     svgContent: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: {
+        msg: 'The svgContent you entered already exists',
+      },
       validate: {
         notNull: {
           msg: 'A svgContent is required',
