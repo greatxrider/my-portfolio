@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import { NavLink, Outlet } from 'react-router-dom';
 
-const Portfolio = () => {
+const Portfolio = ({ categories }) => {
     return (
         <div className="portfolio-content">
             <h1 className="portfolio-title">Portfolio</h1>
@@ -45,7 +45,11 @@ const Portfolio = () => {
                 <NavLink to='mobile' className="filter-button mobileapp">Mobile App Development</NavLink>
             </div>
             <div className="portfolio-gallery">
-                <Outlet />
+                {categories && categories.length > 0 ? (
+                    <Outlet />
+                ) : (
+                    <p>No projects available.</p>
+                )}
             </div>
         </div>
     );

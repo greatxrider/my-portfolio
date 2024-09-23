@@ -50,7 +50,7 @@ const useFetchData = () => {
             }
         } catch (error) {
             console.log(error);
-            navigate("/error");
+            // navigate("/error");
         } finally {
             setLoading(false);
         }

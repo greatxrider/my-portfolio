@@ -1,8 +1,9 @@
 const PortfolioContainer = ({ categories }) => {
     const projects = categories.projects;
+
     return (
-        projects.map((project, i) => {
-            return (
+        <>
+            {projects.map((project, i) => (
                 <div className="gallery-item" key={i}>
                     <img
                         className="project-image"
@@ -16,7 +17,7 @@ const PortfolioContainer = ({ categories }) => {
                         <div className="modal-dialog">
                             <div className="modal-content bg-dark">
                                 <div className="modal-header">
-                                    <h5 className="modal-title" id="exampleModalLabel">{project.title}</h5>
+                                    <h5 className="modal-title" id={`exampleModalLabel-${i}`}>{project.title}</h5>
                                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div className="modal-body">
@@ -29,8 +30,8 @@ const PortfolioContainer = ({ categories }) => {
                                     <div className="technologies-container">
                                         <h5>Technologies Used</h5>
                                         <ul className="technology-list">
-                                            {project.technologies.map((tech, i) => (
-                                                <li key={i}><img className="technology-logo" src={tech.svgContent} /></li>
+                                            {project.technologies.map((tech, j) => (
+                                                <li key={j}><img className="technology-logo" src={tech.svgContent} alt={tech.technology} /></li>
                                             ))}
                                         </ul>
                                     </div>
@@ -43,8 +44,8 @@ const PortfolioContainer = ({ categories }) => {
                         </div>
                     </div>
                 </div>
-            );
-        })
+            ))}
+        </>
     );
 }
 

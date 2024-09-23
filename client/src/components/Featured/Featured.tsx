@@ -18,11 +18,11 @@ const Featured = ({ categories }) => {
                                 console.log(project);
                                 if (project.deviceType === 'imac') {
                                     return (
-                                        <Imac key={project.id} project={project} />
+                                        <Imac modalKey={project.id} project={project} key={project.id} />
                                     );
                                 } else if (project.deviceType === 'macpro') {
                                     return (
-                                        <MacPro key={project.id} project={project} />
+                                        <MacPro modalKey={project.id} project={project} key={project.id} />
                                     );
                                 }
                             }

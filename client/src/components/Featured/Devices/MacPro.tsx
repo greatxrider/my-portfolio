@@ -1,4 +1,4 @@
-const MacPro = ({ project, key }) => {
+const MacPro = ({ project, modalKey }) => {
     return (
         <div className="project">
             <div className="devices-container">
@@ -8,7 +8,7 @@ const MacPro = ({ project, key }) => {
                     alt="MacBook Pro"
                     className="macpro-image"
                     data-bs-toggle="modal"
-                    data-bs-target={`#exampleModal-${key}`}
+                    data-bs-target={`#exampleModal-${modalKey}`}
                     style={{ cursor: 'pointer' }}
                 />
                 <div className="iphone-container">
@@ -17,7 +17,7 @@ const MacPro = ({ project, key }) => {
                         alt="Iphone"
                         className="iphone-image"
                         data-bs-toggle="modal"
-                        data-bs-target={`#exampleModal-${key}`}
+                        data-bs-target={`#exampleModal-${modalKey}`}
                         style={{ cursor: 'pointer' }}
                     />
                     <img src={project.imageUrlMobile} alt="iPhone Screen" className="iphone-screen-image" />
@@ -27,7 +27,7 @@ const MacPro = ({ project, key }) => {
                 <h5>{project.title}</h5>
                 <p>{project.description}</p>
             </div>
-            <div className="modal fade" id={`exampleModal-${key}`} tabIndex="-1" aria-labelledby={`exampleModalLabel-${key}`} aria-hidden="true">
+            <div className="modal fade" id={`exampleModal-${modalKey}`} tabIndex="-1" aria-labelledby={`exampleModalLabel-${modalKey}`} aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content bg-dark">
                         <div className="modal-header">
@@ -38,7 +38,7 @@ const MacPro = ({ project, key }) => {
                             <img
                                 src={project.imageUrlDesktop}
                                 className="modal-image"
-                                alt={`Placeholder ${key + 1}`}
+                                alt={`Placeholder ${modalKey + 1}`}
                             />
                             <p>{project.description}</p>
                             <div className="technologies-container">
