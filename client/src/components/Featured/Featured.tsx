@@ -13,8 +13,7 @@ const Featured = ({ categories }) => {
             <div className="featured-project-container">
                 {categories && categories.length > 0 ? (
                     categories.map((category) => {
-                        console.log(category);
-                        return category.projects.map((project, index) => {
+                        return category.projects.map((project) => {
                             if (project.isFeatured) {
                                 console.log(project);
                                 if (project.deviceType === 'imac') {
@@ -32,40 +31,6 @@ const Featured = ({ categories }) => {
                 ) : (
                     <p>No featured projects available.</p>
                 )}
-                {/* <div className="project">
-                    <div className="devices-container">
-                        <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="Screen"
-                            className="mac-screen-image" />
-                        <img src="/src/app/assets/png/macpro.png" alt="MacBook Pro" className="macbook-image" />
-                        <div className="iphone-container">
-                            <img src="/src/app/assets/png/iphone.png" alt="Iphone" className="iphone-image" />
-                            <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg"
-                                alt="iPhone Screen" className="iphone-screen-image" />
-                        </div>
-                    </div>
-                    <div className="project-description">
-                        <h5>WheelsTalk America</h5>
-                        <p>Dynamic website that empowers customers to access and contribute reviews for car dealerships,
-                            enhancing the overall shopping experience.</p>
-                    </div>
-                </div>
-                <div className="project">
-                    <div className="devices-container">
-                        <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg" alt="Screen"
-                            className="imac-screen-image" />
-                        <img src="/src/app/assets/png/iMacPro.png" alt="iMac Pro" className="imac-image" />
-                        <div className="iphone-container">
-                            <img src="/src/app/assets/png/iphone.png" alt="Iphone" className="iphone-image" />
-                            <img src="https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg"
-                                alt="iPhone Screen" className="iphone-screen-image" />
-                        </div>
-                    </div>
-                    <div className="project-description">
-                        <h5>WheelsTalk America</h5>
-                        <p>Dynamic website that empowers customers to access and contribute reviews for car dealerships,
-                            enhancing the overall shopping experience.</p>
-                    </div>
-                </div> */}
             </div>
         </div>
     );

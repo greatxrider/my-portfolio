@@ -21,7 +21,6 @@ interface ProjectsItem {
   imageUrlDesktop: string;
   imageUrlMobile: string;
   deviceType: string;
-  deviceImageUrl: string;
   githubLink: string;
   liveLink: string;
   categoryName: string;

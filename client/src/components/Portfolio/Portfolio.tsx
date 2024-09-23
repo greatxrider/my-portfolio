@@ -14,15 +14,15 @@ const Portfolio = () => {
                     </div>
                 </div>
                 <div className="stats-item years-experience">
-                    <h3>10</h3>
+                    <h3>1</h3>
                     <p>Years of Experience</p>
                 </div>
                 <div className="stats-item projects-completed">
-                    <h3>200</h3>
+                    <h3>21</h3>
                     <p>Projects Completed</p>
                 </div>
                 <div className="stats-item happy-clients">
-                    <h3>140</h3>
+                    <h3>8</h3>
                     <p>Happy Clients</p>
                 </div>
                 <div className="stats-item project-done-container">
