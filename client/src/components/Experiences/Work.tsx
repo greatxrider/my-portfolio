@@ -106,7 +106,7 @@ const Work = () => {
                     <h5 className="work-position">{job.jobTitle}</h5>
                     <p className="work-description">{job.description}</p>
                 </div>
-            ))};
+            ))}
         </div>
     );
 }

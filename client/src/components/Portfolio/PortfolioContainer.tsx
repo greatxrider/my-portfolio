@@ -3,9 +3,11 @@ const PortfolioContainer = ({ categories }) => {
 
     return (
         projects.map((project, i) => (
-            <div className="gallery-item" key={i}>
-                <img src={project.imageUrlDesktop} alt={`Placeholder ${i + 1}`} />
-            </div>
+            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" key={i}>
+                <div className="gallery-item">
+                    <img src={project.imageUrlDesktop} alt={`Placeholder ${i + 1}`} />
+                </div>
+            </a>
         ))
     );
 }

@@ -9,7 +9,7 @@ import Testimonials from "../Testimonials/Testimonials";
 import Blog from "../Blog/Blog";
 import Contact from "../Contact/Contact";
 
-const Home = () => {
+const Home = ({ categories }) => {
     return (
         <>
             <Headline />
@@ -18,7 +18,7 @@ const Home = () => {
             <Certifications />
             <Portfolio />
             <Services />
-            <Featured />
+            <Featured categories={categories} />
             <Testimonials />
             <Blog />
             <Contact />

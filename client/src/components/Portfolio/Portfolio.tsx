@@ -47,9 +47,6 @@ const Portfolio = () => {
             <div className="portfolio-gallery">
                 <Outlet />
             </div>
-            {/* <div className="portfolio-more">
-                <button className="more-button">See More</button>
-            </div> */}
         </div>
     );
 }
