@@ -21,7 +21,6 @@ const ImageModal = ({ imageSrc, imageAlt }) => {
                 id="modalImg"
                 src={imageSrc}
                 alt={imageAlt}
-                style={{ width: '100%', maxWidth: '300px' }}
                 onClick={() => openModal(imageSrc, imageAlt)}
             />
             {isOpen && (

@@ -1,8 +1,12 @@
+import { Link, useNavigate } from "react-router-dom";
+
 import FullStack from "../Logos/FullStack"
 import UiUx from "../Logos/UiUx"
 import MobileDev from "../Logos/MobileDev"
 
 const About = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="about-container">
             <h1 className="about-title">About Me</h1>
@@ -25,6 +29,9 @@ const About = () => {
                             software tools, I am well-equipped to meet your needs.
                         </p>
                         <h5>daligdig.jephmari@gmail.com</h5>
+                        <div className="description-action">
+                            <Link to="/aboutme" className="description-request-button">More About Me</Link>
+                        </div>
                     </div>
                     <div className="services-section">
                         <div className="full-stack">

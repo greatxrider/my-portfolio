@@ -1,6 +1,8 @@
-import { Button, Label, Col, FormGroup } from 'reactstrap';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { Button, Col, FormGroup } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { validateContactForm } from '../../utils/validateContactForm';
+import { validateContactForm } from "../../utils/validateContactForm";
 
 import Reddit from "../Logos/Reddit";
 import Facebook from "../Logos/Facebook";
@@ -8,9 +10,30 @@ import Github from "../Logos/Github";
 import Linkedin from "../Logos/Linkedin";
 
 const Contact = () => {
-    const handleSubmit = (values, { resetForm }) => {
+    const form = useRef();
+    const [isMessageSent, setIsMessageSent] = useState(false);
+
+    const sendEmail = async (values) => {
+        try {
+            await emailjs.send('service_b4yo1cd', 'template_uch9agt', values, {
+                publicKey: 'CMlkIznQap6_nJACf',
+            });
+            setIsMessageSent(true);
+            console.log('SUCCESS!');
+        } catch (error) {
+            setIsMessageSent(false);
+            console.log('FAILED...', error.text);
+        }
+    };
+
+    const handleSubmit = async (values, { resetForm }) => {
+        // Call sendEmail to send the email
+        await sendEmail(values);
+
         console.log('form values:', values);
         console.log('in JSON format:', JSON.stringify(values));
+
+        // Reset the form
         resetForm();
     };
 
@@ -41,87 +64,98 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="contact-form">
-                    <Formik
-                        initialValues={{
-                            firstName: '',
-                            lastName: '',
-                            phoneNum: '',
-                            email: '',
-                            agree: false,
-                            contactType: 'By Phone',
-                            feedback: ''
-                        }}
-                        onSubmit={handleSubmit}
-                        validate={validateContactForm}
-                    >
-                        <Form className="contact-form-container">
-                            <FormGroup row>
-                                <Col md='6'>
-                                    <Field
-                                        name='firstName'
-                                        placeholder='First Name*'
-                                        className='form-control firstName-input'
-                                    />
-                                    <ErrorMessage name='firstName'>
-                                        {(msg) => <p className='text-danger'>{msg}</p>}
-                                    </ErrorMessage>
-                                </Col>
-                                <Col md='6'>
-                                    <Field
-                                        name='lastName'
-                                        placeholder='Last Name*'
-                                        className='form-control lastName-input'
-                                    />
-                                    <ErrorMessage name='lastName'>
-                                        {(msg) => <p className='text-danger'>{msg}</p>}
-                                    </ErrorMessage>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Col md='12'>
-                                    <Field
-                                        name='phoneNum'
-                                        placeholder='Phone*'
-                                        className='form-control phoneNum-input'
-                                    />
-                                    <ErrorMessage name='phoneNum'>
-                                        {(msg) => <p className='text-danger'>{msg}</p>}
-                                    </ErrorMessage>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Col md='12'>
-                                    <Field
-                                        name='email'
-                                        placeholder='Email*'
-                                        type='email'
-                                        className='form-control email-input'
-                                    />
-                                    <ErrorMessage name='email'>
-                                        {(msg) => <p className='text-danger'>{msg}</p>}
-                                    </ErrorMessage>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Col md='12'>
-                                    <Field
-                                        name='feedback'
-                                        as='textarea'
-                                        rows='12'
-                                        placeholder='How can I help you?'
-                                        className='form-control message-input'
-                                    />
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Col md='4'>
-                                    <Button className="sendMessage-button" type='submit' color='primary'>
-                                        Request Now
-                                    </Button>
-                                </Col>
-                            </FormGroup>
-                        </Form>
-                    </Formik>
+                    {isMessageSent ? (
+                        <div className="success-message">
+                            <h2>Thank you!</h2>
+                            <p>Your message has been sent successfully.</p>
+                            <p>I will be in touch with you shortly.</p>
+                        </div>
+                    ) : (
+                        <Formik
+                            initialValues={{
+                                firstName: '',
+                                lastName: '',
+                                phoneNum: '',
+                                email: '',
+                                feedback: ''
+                            }}
+                            validate={validateContactForm}
+                            onSubmit={handleSubmit}
+                        >
+                            {({ isSubmitting }) => (
+                                <Form ref={form} className="contact-form-container">
+                                    <FormGroup row>
+                                        <Col md='6'>
+                                            <Field
+                                                name='firstName'
+                                                placeholder='First Name*'
+                                                className='form-control firstName-input'
+                                            />
+                                            <ErrorMessage name='firstName'>
+                                                {(msg) => <p className='text-danger error-message'>{msg}</p>}
+                                            </ErrorMessage>
+                                        </Col>
+                                        <Col md='6'>
+                                            <Field
+                                                name='lastName'
+                                                placeholder='Last Name*'
+                                                className='form-control lastName-input'
+                                            />
+                                            <ErrorMessage name='lastName'>
+                                                {(msg) => <p className='text-danger error-message'>{msg}</p>}
+                                            </ErrorMessage>
+                                        </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Col md='12'>
+                                            <Field
+                                                name='phoneNum'
+                                                placeholder='Phone*'
+                                                className='form-control phoneNum-input'
+                                            />
+                                            <ErrorMessage name='phoneNum'>
+                                                {(msg) => <p className='text-danger error-message'>{msg}</p>}
+                                            </ErrorMessage>
+                                        </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Col md='12'>
+                                            <Field
+                                                name='email'
+                                                placeholder='Email*'
+                                                type='email'
+                                                className='form-control email-input'
+                                            />
+                                            <ErrorMessage name='email'>
+                                                {(msg) => <p className='text-danger error-message'>{msg}</p>}
+                                            </ErrorMessage>
+                                        </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Col md='12'>
+                                            <Field
+                                                name='feedback'
+                                                as='textarea'
+                                                rows='12'
+                                                placeholder='How can I help you?'
+                                                className='form-control message-input'
+                                            />
+                                            <ErrorMessage name='feedback'>
+                                                {(msg) => <p className='text-danger error-message'>{msg}</p>}
+                                            </ErrorMessage>
+                                        </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Col md='4'>
+                                            <Button className="sendMessage-button" type='submit' color='primary' disabled={isSubmitting}>
+                                                Request Now
+                                            </Button>
+                                        </Col>
+                                    </FormGroup>
+                                </Form>
+                            )}
+                        </Formik>
+                    )}
                 </div>
             </div>
         </div>
