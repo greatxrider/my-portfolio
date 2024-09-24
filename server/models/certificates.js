@@ -47,9 +47,6 @@ module.exports = (sequelize, DataTypes) => {
     certificateImageUrl: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: {
-        msg: 'The certificate image url you entered already exists',
-      },
       validate: {
         notNull: {
           msg: 'A certificate image url is required',
@@ -62,9 +59,6 @@ module.exports = (sequelize, DataTypes) => {
     certificateUrl: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: {
-        msg: 'The certificate url you entered already exists',
-      },
       validate: {
         notNull: {
           msg: 'A certificate url is required',

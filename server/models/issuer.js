@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Badges extends Model {
+  class Issuer extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Badges.belongsTo(models.User, {
+      Issuer.belongsTo(models.User, {
         as: 'user',
         foreignKey: {
           fieldName: 'userId',
@@ -19,8 +19,8 @@ module.exports = (sequelize, DataTypes) => {
         },
       });
 
-      Badges.belongsTo(models.Issuer, {
-        as: 'issuer',
+      Issuer.hasMany(models.Badges, {
+        as: 'badges',
         foreignKey: {
           fieldName: 'issuerId',
           allowNull: false,
@@ -28,26 +28,40 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  Badges.init({
-    badgeSvgContent: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    badgeUrl: {
+  Issuer.init({
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: {
+        msg: 'The issuer name you entered already exists',
+      },
       validate: {
         notNull: {
-          msg: 'A badge url is required',
+          msg: 'An issuer name is required',
         },
         notEmpty: {
-          msg: 'Please provide a badge url',
+          msg: 'Please provide an issuer name',
         },
       },
     },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        msg: 'The issuer url you entered already exists',
+      },
+      validate: {
+        notNull: {
+          msg: 'An issuer url is required',
+        },
+        notEmpty: {
+          msg: 'Please provide an issuer url',
+        },
+      },
+    }
   }, {
     sequelize,
-    modelName: 'Badges',
+    modelName: 'Issuer',
   });
-  return Badges;
+  return Issuer;
 };

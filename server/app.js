@@ -14,6 +14,7 @@ const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'tr
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/usersRouter');
 const educationRouter = require('./routes/educationRouter');
+const issuersRouter = require('./routes/issuersRouter');
 const badgesRouter = require('./routes/badgesRouter');
 const projectsRouter = require('./routes/projectsRouter');
 const categoriesRouter = require('./routes/categoriesRouter');
@@ -46,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/education', educationRouter);
+app.use('/api/issuers', issuersRouter);
 app.use('/api/badges', badgesRouter);
 app.use('/api/skills', skillsRouter);
 app.use('/api/testimonials', testimonialsRouter);
