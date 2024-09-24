@@ -8,7 +8,7 @@ const Certifications = () => {
     }
 
     return (
-        <div className="certifications-content">
+        <div className="certifications-content" id="certifications">
             <h1 className="certifications-title">Badges & Certifications</h1>
             <div className="certifications-body">
                 <div className="certifications-description">

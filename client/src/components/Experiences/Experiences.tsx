@@ -8,7 +8,7 @@ import Technologies from "./Technologies";
 
 const Experiences = () => {
     return (
-        <div className="experience-content">
+        <div className="experience-content" id="experience">
             <h1 className="experience-title">Experiences & Education</h1>
             <div className="career-card-item">
                 <div className="avatar-container">

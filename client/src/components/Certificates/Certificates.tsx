@@ -8,6 +8,7 @@ import { formatDate } from '../../utils/dateFormatter';
 
 // Components
 import Loading from "../Loading/Loading";
+import { i } from "vitest/dist/reporters-yx5ZTtEV.js";
 
 // Define types for the education data and errors
 interface Certificate {
@@ -18,10 +19,22 @@ interface Certificate {
     issueDate: string;
 }
 
+interface Badges {
+    badgeSvgContent: string;
+    badgeUrl: string;
+}
+
 interface InstitutionItem {
     name: string;
     url: string;
-    certificates: Certificate[];
+    badges: Certificate[];
+}
+
+
+interface IssuerItem {
+    name: string;
+    url: string;
+    badges: Badges[];
 }
 
 interface ApiError {
@@ -33,6 +46,7 @@ const Certificates = () => {
 
     // State
     const [institutions, setInstitutions] = useState<InstitutionItem[]>([]);
+    const [issuers, setIssuers] = useState<IssuerItem[]>([]);
     const [errors, setErrors] = useState<ApiError[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -72,16 +86,17 @@ const Certificates = () => {
         }
     };
 
-    const fetchInstitutions = async (): Promise<void> => {
+    const fetchData = async (endpoint: string, setData: (data: any) => void): Promise<void> => {
         try {
-            const response = await api("/institutions");
+            const response = await api(endpoint);
             const data = await handleApiResponse(response);
             if (data) {
-                setInstitutions(data);
-                console.log('Institutions are successfully fetched!');
+                setData(data);
+                console.log(`${endpoint} successfully fetched!`);
             }
         } catch (error) {
             console.log(error);
+            setErrors([{ message: error.message }]);
             navigate("/error");
         } finally {
             setLoading(false);
@@ -89,7 +104,8 @@ const Certificates = () => {
     };
 
     useEffect(() => {
-        fetchInstitutions();
+        fetchData("/institutions", setInstitutions);
+        fetchData("/issuers", setIssuers);
     }, []);
 
     if (loading) {
@@ -106,7 +122,7 @@ const Certificates = () => {
                         {institutions.map((institution, index) => (
                             <div className="certifications-content" key={index}>
                                 <h1 className="certifications-title">{institution.name}</h1>
-                                <div className={`row ${institution.certificates.length === 1 ? 'single-card-row' : 'row-cols-1 row-cols-md-3 g-4 justify-content-center'}`}>
+                                <div className={`row ${institution.certificates.length === 1 ? 'single-card-row' : 'row-cols-1 row-cols-md-2 g-4 justify-content-center'}`}>
                                     {institution.certificates.map((certificate, certIndex) => (
                                         <div className="col" key={certIndex}>
                                             <div className="card h-100">
@@ -130,6 +146,23 @@ const Certificates = () => {
                             </div>
                         ))}
                     </div>
+                </div>
+            </div>
+            <div className="badges-content">
+                <div className="certifications-container">
+                    <h1 className="certifications-title">Badges</h1>
+                    {issuers.map((issuer, index) => (
+                        <div className="certifications-title" key={index}>
+                            <h4>{issuer.name}</h4>
+                            {
+                                issuer.badges.map((badge, index) => {
+                                    return (
+                                        <a className="link" href={badge.badgeUrl} key={index}>{badge.badgeUrl}</a>
+                                    )
+                                })
+                            }
+                        </div>
+                    ))}
                 </div>
             </div>
         </>

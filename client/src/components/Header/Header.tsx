@@ -14,22 +14,22 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link" aria-current="page" href="#">About</a>
+                                <a className="nav-link" aria-current="page" href="#about">About</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Experience</a>
+                                <a className="nav-link" href="#experience">Experience</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Portfolio</a>
+                                <a className="nav-link" href="#certifications">Certifications</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Projects</a>
+                                <a className="nav-link" href="#portfolio">Portfolio</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Contact</a>
+                                <a className="nav-link" href="#projects">Projects</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Resume</a>
+                                <a className="nav-link" href="#contact">Contact</a>
                             </li>
                         </ul>
                     </div>

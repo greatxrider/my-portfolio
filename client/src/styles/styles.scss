@@ -923,6 +923,10 @@ body {
     }
 }
 
+.badges-content {
+    
+}
+
 //  Portfolio
 .portfolio-content {
     display: flex;
@@ -2529,6 +2533,11 @@ body {
     color: #d9534f;
     margin-top: 5px;
     margin-bottom: 0;
+}
+
+.card-label-id,
+.card-label-url {
+    font-weight: bold;
 }
 
 footer {

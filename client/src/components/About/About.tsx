@@ -8,7 +8,7 @@ const About = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="about-container">
+        <div className="about-container" id="about">
             <h1 className="about-title">About Me</h1>
             <div className="about-content">
                 <div className="experience-section">

@@ -3,7 +3,7 @@ import MacPro from './Devices/MacPro';
 
 const Featured = ({ categories }) => {
     return (
-        <div className="featured-content">
+        <div className="featured-content" id="projects">
             <h1 className="featured-title">Featured Projects</h1>
             <div className="featured-description">
                 <p>Take a look at some of the projects I’ve worked on, covering Mobile App Development, Full Stack Development,

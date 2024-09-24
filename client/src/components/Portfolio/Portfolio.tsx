@@ -4,7 +4,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 const Portfolio = ({ categories }) => {
     return (
-        <div className="portfolio-content">
+        <div className="portfolio-content" id="portfolio">
             <h1 className="portfolio-title">Portfolio</h1>
             <div className="portfolio-stats">
                 <div className="stats-item intime-projects-container">
