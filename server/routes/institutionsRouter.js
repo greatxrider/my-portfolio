@@ -2,31 +2,36 @@
 
 const express = require('express');
 
-const blogsRouter = express.Router();
-const { Blogs, User } = require('../models');
+const institutionsRouter = express.Router();
+const { Institutions, Certificates, User } = require('../models');
 const { authenticateUser } = require('../middleware/auth-user');
 const { asyncHandler } = require('../middleware/async-handler');
 const { fetchResourceAndCheckOwnership } = require('../middleware/fetch-resource-and-check');
 
-blogsRouter.route('/')
+institutionsRouter.route('/')
     .get(asyncHandler(async (req, res) => {
-        const blogs = await Blogs.findAll({
+        const institutions = await Institutions.findAll({
             include: [
                 {
                     model: User,
                     as: 'user',
                     attributes: ['id', 'firstName', 'lastName', 'emailAddress'],
                 },
+                {
+                    model: Certificates,
+                    as: 'certificates',
+                    attributes: ['id', 'certificateId', 'certificateImageUrl', 'certificateUrl', 'title', 'issueDate'],
+                },
             ]
         });
 
-        res.status(200).json(blogs);
-        console.log(blogs.map(blog => blog.get({ plain: true })));
+        res.status(200).json(institutions);
+        console.log(institutions.map(institution => institution.get({ plain: true })));
     }))
     .post(authenticateUser, asyncHandler(async (req, res) => {
         try {
-            const blog = await Blogs.create(req.body);
-            res.status(201).location(`/blogs/${blog.id}`).end();
+            const institution = await Institutions.create(req.body);
+            res.status(201).location(`/institutions/${institution.id}`).end();
         } catch (error) {
             console.log('ERROR: ', error.name);
 
@@ -39,9 +44,9 @@ blogsRouter.route('/')
         }
     }));
 
-blogsRouter.route('/:id')
+institutionsRouter.route('/:id')
     .get(asyncHandler(async (req, res) => {
-        const blog = await Blogs.findByPk(req.params.id, {
+        const institution = await Institutions.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
@@ -51,13 +56,13 @@ blogsRouter.route('/:id')
             ],
         });
 
-        if (blog) {
-            res.status(200).json(blog);
+        if (institution) {
+            res.status(200).json(institution);
         } else {
-            res.status(404).json({ message: 'Blog not found' });
+            res.status(404).json({ message: 'Institutions not found' });
         }
     }))
-    .put(authenticateUser, fetchResourceAndCheckOwnership(Blogs), asyncHandler(async (req, res) => {
+    .put(authenticateUser, fetchResourceAndCheckOwnership(Institutions), asyncHandler(async (req, res) => {
         try {
             await req.resource.update(req.body);
             res.status(204).end();
@@ -72,7 +77,7 @@ blogsRouter.route('/:id')
             }
         }
     }))
-    .delete(authenticateUser, fetchResourceAndCheckOwnership(Blogs), asyncHandler(async (req, res) => {
+    .delete(authenticateUser, fetchResourceAndCheckOwnership(Institutions), asyncHandler(async (req, res) => {
         try {
             await req.resource.destroy();
             res.status(204).end();
@@ -88,4 +93,4 @@ blogsRouter.route('/:id')
         }
     }));
 
-module.exports = blogsRouter;
+module.exports = institutionsRouter;

@@ -22,6 +22,7 @@ const testimonialsRouter = require('./routes/testimonialsRouter');
 const workRouter = require('./routes/workRouter');
 const blogsRouter = require('./routes/blogsRouter');
 const certificatesRouter = require('./routes/certificatesRouter');
+const institutionsRouter = require('./routes/institutionsRouter');
 
 // Create the Express app
 var app = express();
@@ -51,6 +52,7 @@ app.use('/api/testimonials', testimonialsRouter);
 app.use('/api/work', workRouter);
 app.use('/api/blogs', blogsRouter);
 app.use('/api/certificates', certificatesRouter);
+app.use('/api/institutions', institutionsRouter);
 app.use('/api/categories', categoriesRouter);
 app.use('/api/projects', projectsRouter);
 

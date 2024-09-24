@@ -11,13 +11,76 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Blogs.belongsTo(models.User, {
+        as: 'user',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
     }
   }
   Blogs.init({
-    date: DataTypes.STRING,
-    title: DataTypes.STRING,
-    description: DataTypes.STRING,
-    blogLink: DataTypes.STRING
+    date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A date is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a date',
+        },
+      },
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A title is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a title',
+        },
+      },
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A description is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a description',
+        },
+      },
+    },
+    blogLink: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'A blogLink is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a blogLink',
+        },
+      },
+    },
+    imageUrl: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'An imageUrl is required',
+        },
+        notEmpty: {
+          msg: 'Please provide an imageUrl',
+        },
+      },
+    }
   }, {
     sequelize,
     modelName: 'Blogs',

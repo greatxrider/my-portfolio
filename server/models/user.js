@@ -72,6 +72,30 @@ module.exports = (sequelize) => {
           allowNull: false,
         },
       });
+
+      User.hasMany(models.Blogs, {
+        as: 'blogs',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
+
+      User.hasMany(models.Institutions, {
+        as: 'institutions',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
+
+      User.hasMany(models.Certificates, {
+        as: 'certificates',
+        foreignKey: {
+          fieldName: 'userId',
+          allowNull: false,
+        },
+      });
     };
   };
 
