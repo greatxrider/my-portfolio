@@ -10,6 +10,7 @@ import Loading from "../Loading/Loading";
 // Define types for the education data and errors
 interface TechnologyItem {
     technology: string;
+    imgShieldsLogo: string;
     svgContent: string;
 }
 

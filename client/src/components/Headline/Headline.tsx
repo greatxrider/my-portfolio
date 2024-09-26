@@ -3,11 +3,14 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 // Social Icons
 import Vector1 from "../Logos/Vector1";
-import Facebook from "../Logos/Facebook";
-import Reddit from "../Logos/Reddit";
+import Instagram from "../Logos/Instagram";
+import X from '../Logos/X';
 import Github from "../Logos/Github";
 import Linkedin from "../Logos/Linkedin";
+import LeetCode from '../Logos/LeetCode';
 import ImageColumn from "../Logos/ImageColumn.tsx";
+
+import { Link } from "react-router-dom";
 
 const Headline = () => {
     return (
@@ -29,15 +32,25 @@ const Headline = () => {
                     <div className="social">
                         <p>Follow Me</p>
                         <div className="social-icons">
-                            <Reddit />
-                            <Facebook />
-                            <Github />
-                            <Linkedin />
+                            <X className="social-icon" />
+                            <Instagram className="social-icon" />
+                            <Github className="social-icon" />
+                            <LeetCode className="social-icon" />
+                            <Linkedin className="social-icon" />
                         </div>
                     </div>
                     <div className="cta-buttons">
-                        <button type="button" className="hello-button">Say Hello</button>
-                        <button type="button" className="view-button">View Portfolio <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
+                        <Link
+                            className="hello-button"
+                            to={'#contact'}
+                            target="_blank"
+                            rel="noopener noreferrer">Download Resume</Link>
+                        <Link
+                            className="view-button"
+                            to={'https://my-portfolio-site-in-node-express.vercel.app/'}
+                            target="_blank"
+                            rel="noopener noreferrer">View Portfolio <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                        </Link>
                     </div>
                 </div>
                 <div className="image-column">

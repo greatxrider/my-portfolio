@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Certificates from "./components/Certificates/Certificates";
 import MyStory from "./components/MyStory/MyStory";
 import PortfolioContainer from "./components/Portfolio/PortfolioContainer";
+import PortfolioAll from "./components/Portfolio/PortfolioAll";
 
 // Hooks
 import { useState, useEffect } from "react";
@@ -57,15 +58,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home categories={categories} />}>
           <Route index element={<Navigate replace to="all" />} />
-          {categories.length > 0 && (
-            <>
-              <Route path="all" element={<PortfolioContainer categories={categories[0]} />} />
-              <Route path="uiux" element={<PortfolioContainer categories={categories[1]} />} />
-              <Route path="web" element={<PortfolioContainer categories={categories[2]} />} />
-              <Route path="mobile" element={<PortfolioContainer categories={categories[3]} />} />
-            </>
-          )}
-          <Route path="*" element={<Navigate replace to="/404" />} />
+          <Route path="all" element={<PortfolioAll projects={projects} />} />
+          <Route path="uiux" element={<PortfolioContainer categories={categories[1]} />} />
+          <Route path="web" element={<PortfolioContainer categories={categories[2]} />} />
+          <Route path="mobile" element={<PortfolioContainer categories={categories[3]} />} />
         </Route>
         <Route path="aboutme" element={<MyStory />} />
         <Route path="certificates" element={<Certificates />} />

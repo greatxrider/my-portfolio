@@ -120,9 +120,9 @@ const Certificates = () => {
                     <p className="certifications-description">I am certified to serve you.</p>
                     <div className="certifications">
                         {institutions.map((institution, index) => (
-                            <div className="certifications-content" key={index}>
-                                <h1 className="certifications-title">{institution.name}</h1>
-                                <div className={`row ${institution.certificates.length === 1 ? 'single-card-row' : 'row-cols-1 row-cols-md-2 g-4 justify-content-center'}`}>
+                            <div className="certifications-card" key={index}>
+                                <h1 className="certifications-card-title">{institution.name}</h1>
+                                <div className={`card-container row ${institution.certificates.length === 1 ? 'single-card-row' : 'row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center'}`}>
                                     {institution.certificates.map((certificate, certIndex) => (
                                         <div className="col" key={certIndex}>
                                             <div className="card h-100">
@@ -149,10 +149,10 @@ const Certificates = () => {
                 </div>
             </div>
             <div className="badges-content">
-                <div className="certifications-container">
-                    <h1 className="certifications-title">Badges</h1>
+                <div className="badges-container">
+                    <h1 className="badges-title">Badges</h1>
                     {issuers.map((issuer, index) => (
-                        <div className="certifications-title" key={index}>
+                        <div className="badge-issuer" key={index}>
                             <h4>{issuer.name}</h4>
                             {
                                 issuer.badges.map((badge, index) => {

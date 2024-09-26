@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faDownload } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 // Components
 import Work from "./Work";
@@ -22,14 +23,18 @@ const Experiences = () => {
                     <p>I specialize in Full Stack Development, encompassing front-end and back-end expertise. My focus is on creating robust web applications and native mobile apps that deliver seamless user experiences. I excel in UI/UX design, ensuring intuitive interfaces that blend functionality with elegance.</p>
                 </div>
                 <div className="experience-actions">
-                    <button className="experience-request-button">
-                        Request Quotation
-                        <FontAwesomeIcon icon={faArrowRight} />
-                    </button>
-                    <button className="experience-resume-button">
-                        Download Resume
-                        <FontAwesomeIcon icon={faDownload} />
-                    </button>
+                    <a href="#contact" style={{ textDecoration: 'none' }}>
+                        <button className="experience-request-button">
+                            Request Quotation
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </button>
+                    </a>
+                    <Link to={"/har"} style={{ textDecoration: 'none' }}>
+                        <button className="experience-resume-button">
+                            Download Resume
+                            <FontAwesomeIcon icon={faDownload} />
+                        </button>
+                    </Link>
                 </div>
             </div>
             <div className="career-history">

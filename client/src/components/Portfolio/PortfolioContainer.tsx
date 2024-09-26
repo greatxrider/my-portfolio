@@ -1,4 +1,5 @@
 const PortfolioContainer = ({ categories }) => {
+    
     const projects = categories.projects;
 
     return (
@@ -31,7 +32,7 @@ const PortfolioContainer = ({ categories }) => {
                                         <h5>Technologies Used</h5>
                                         <ul className="technology-list">
                                             {project.technologies.map((tech, j) => (
-                                                <li key={j}><img className="technology-logo" src={tech.svgContent} alt={tech.technology} /></li>
+                                                <li key={j}><img className="technology-logo" src={tech.imgShieldsLogo} alt={tech.technology} /></li>
                                             ))}
                                         </ul>
                                     </div>

@@ -259,7 +259,7 @@ body {
 
 .nav-item,
 .nav-link {
-    width: 105px;
+    width: 130px;
     height: 48px;
 }
 
@@ -327,6 +327,7 @@ body {
     display: flex;
     justify-content: center;
     background-color: black;
+    padding: 90px 40px;
 
     .image-column {
         display: flex;
@@ -376,6 +377,15 @@ body {
     .social-icons {
         display: flex;
         gap: 12px;
+
+        .social-icon {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
     }
 }
 
@@ -384,6 +394,10 @@ body {
 
     .hello-button,
     .view-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
         width: 145px;
         height: 64px;
         border-radius: 12px;
@@ -396,6 +410,9 @@ body {
         background-color: #1777E5;
         color: white;
         transition: background-color 0.3s;
+        width: 100%;
+        max-width: 222px;
+
 
         &:hover {
             background-color: #2586f5;
@@ -409,6 +426,7 @@ body {
     }
 
     .view-button {
+        color: black;
         width: 100%;
         max-width: 222px;
         gap: 12px;
@@ -921,10 +939,88 @@ body {
             background-color: #b38b14;
         }
     }
+
+    .certifications {
+
+        .certifications-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 45px 40px;
+            background-color: black;
+
+            .certifications-card-title {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: white;
+            }
+
+            .card-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                max-width: 800px;
+                min-width: 400px;
+                width: 100%;
+
+                .col {
+                    max-width: 400px;
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
 .badges-content {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 45px 40px;
+    background-color: black;
+
+    .badges-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 150px;
+        width: 100%;
+        height: auto;
+
+        .badges-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-decoration: underline;
+            color: white;
+        }
+
+        .badge-issuer {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+
+            h4 {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: white;
+            }
+
+            .link {
+                display: inline-block;
+                font-size: 2rem;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-decoration: none;
+                white-space: nowrap;
+                text-align: center;
+            }
+        }
+    }
 }
 
 //  Portfolio
@@ -1078,6 +1174,9 @@ body {
             height: 350px;
 
             .project-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
                 border-radius: 12px;
 
                 border-radius: 12px;

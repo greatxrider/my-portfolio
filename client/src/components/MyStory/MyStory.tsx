@@ -60,8 +60,8 @@ const MyStory = () => {
                     </div>
                     <div className="mystory-workSetup-row">
                         <div className="mystory-workSetup-textContainer-pws">
-                            <p>When a carpenter has the right tools, the house is well-built and comfortable. The same goes for my work setup—it directly impacts my productivity and the quality of my work.</p>
-                            <p>With a fast computer, ergonomic chair, and good desk, I can work efficiently without burning out, even during overtime.</p>
+                            <p>My clients don't need to provide any equipment; I have all the necessary tools ready for their projects. Just like a well-prepared carpenter, I am always equipped to deliver high-quality results efficiently.</p>
+                            <p>Equipped with a high-end computer, ergonomic chair, and a quality desk, I can work with high productivity and efficiency for my clients, ensuring that I cater to their needs effectively.</p>
                             <p>And of course, having a work buddy to help manage stress and remind me to take breaks is key to staying balanced.</p>
                         </div>
                     </div>

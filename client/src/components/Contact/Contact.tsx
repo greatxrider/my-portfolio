@@ -4,8 +4,9 @@ import { Button, Col, FormGroup } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { validateContactForm } from "../../utils/validateContactForm";
 
-import Reddit from "../Logos/Reddit";
-import Facebook from "../Logos/Facebook";
+import X from "../Logos/X";
+import Instagram from "../Logos/Instagram";
+import LeetCode from "../Logos/LeetCode";
 import Github from "../Logos/Github";
 import Linkedin from "../Logos/Linkedin";
 
@@ -56,10 +57,11 @@ const Contact = () => {
                     <div className="social">
                         <p className="follow-me">Follow Me:</p>
                         <div className="social-icons">
-                            <Reddit />
-                            <Facebook />
-                            <Github />
-                            <Linkedin />
+                            <X className="social-icon" />
+                            <Instagram className="social-icon" />
+                            <Github className="social-icon" />
+                            <LeetCode className="social-icon" />
+                            <Linkedin className="social-icon" />
                         </div>
                     </div>
                 </div>
