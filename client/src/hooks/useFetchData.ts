@@ -4,12 +4,12 @@ import { api } from '../utils/apiHelper';
 
 interface ApiError {
     message: string;
-  }
+}
 
 const useFetchData = () => {
     const navigate = useNavigate();
-    const [loading, setLoading] = useState < boolean > (true);
-    const [errors, setErrors] = useState < ApiError[] > ([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [errors, setErrors] = useState<ApiError[]>([]);
 
     const handleApiResponse = async (response: Response): Promise<any | null> => {
         let data;
@@ -18,29 +18,31 @@ const useFetchData = () => {
             data = await response.json();
         }
 
-        if (response.status === 200) {
+        if (response.ok) { // This checks if the response status is in the range 200-299
             return data;
         } else if (response.status === 204) {
-            return null;
+            return null; // No content
         } else if (response.status === 304) {
             console.log('Resource not modified, using cached version.');
-            return null;
-        } else if (response.status === 400) {
-            setErrors(data.errors);
-            console.log(errors);
-        } else if (response.status === 401) {
-            navigate("/signin");
-            throw new Error('Unauthorized');
-        } else if (response.status === 403) {
-            setErrors(data.errors);
-            console.log(errors);
-            navigate('/forbidden');
+            return null; // Not modified
         } else {
-            throw new Error('Unexpected error');
+            // Handle errors
+            const errorData = data?.errors || [{ message: 'Unexpected error' }];
+            setErrors(errorData);
+            console.error(errorData);
+            if (response.status === 401) {
+                navigate("/signin");
+                throw new Error('Unauthorized');
+            } else if (response.status === 403) {
+                navigate('/forbidden');
+            } else {
+                throw new Error('Unexpected error');
+            }
         }
     };
 
     const fetchData = async (endpoint: string, setData: (data: any) => void): Promise<void> => {
+        setLoading(true); // Move loading state update here for accurate loading state
         try {
             const response = await api(endpoint);
             const data = await handleApiResponse(response);
@@ -49,7 +51,8 @@ const useFetchData = () => {
                 console.log(`${endpoint} data successfully fetched!`);
             }
         } catch (error) {
-            console.log(error);
+            console.error(error);
+            // Optionally navigate to an error page or handle it in another way
             // navigate("/error");
         } finally {
             setLoading(false);

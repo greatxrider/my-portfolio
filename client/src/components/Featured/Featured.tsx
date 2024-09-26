@@ -15,7 +15,6 @@ const Featured = ({ categories }) => {
                     categories.map((category) => {
                         return category.projects.map((project) => {
                             if (project.isFeatured) {
-                                console.log(project);
                                 if (project.deviceType === 'imac') {
                                     return (
                                         <Imac modalKey={project.id} project={project} key={project.id} />

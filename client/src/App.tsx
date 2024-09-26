@@ -46,7 +46,7 @@ const App = () => {
     setLoading(true);
     fetchData('/categories', setCategories);
     fetchData('/projects', setProjects);
-  }, [setLoading]);
+  }, []);
 
   if (loading) {
     return <Loading />; // Render the Loading component while loading
@@ -56,9 +56,9 @@ const App = () => {
     <div className="container">
       <Header />
       <Routes>
-        <Route path="/" element={<Home categories={categories} />}>
+        <Route path="/" element={<Home categories={categories} projects={projects} />}>
           <Route index element={<Navigate replace to="all" />} />
-          <Route path="all" element={<PortfolioAll projects={projects} />} />
+          <Route path="all" element={<PortfolioAll categories={categories} />} />
           <Route path="uiux" element={<PortfolioContainer categories={categories[1]} />} />
           <Route path="web" element={<PortfolioContainer categories={categories[2]} />} />
           <Route path="mobile" element={<PortfolioContainer categories={categories[3]} />} />

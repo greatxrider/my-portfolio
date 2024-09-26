@@ -45,7 +45,7 @@ const Imac = ({ project, modalKey }) => {
                                 <h5>Technologies Used</h5>
                                 <ul className="technology-list">
                                     {project.technologies.map((tech, i) => (
-                                        <li key={i}><img className="technology-logo" src={tech.svgContent} /></li>
+                                        <li key={i}><img className="technology-logo" src={tech.imgShieldsLogo} /></li>
                                     ))}
                                 </ul>
                             </div>
