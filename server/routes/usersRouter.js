@@ -39,7 +39,7 @@ usersRouter.get('/', authenticateUser, asyncHandler(async (req, res) => {
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
  */
-usersRouter.post('/', asyncHandler(async (req, res) => {
+usersRouter.post('/', authenticateUser, asyncHandler(async (req, res) => {
   try {
     await User.create(req.body);
     res.status(201).location('/').end();

@@ -44,6 +44,21 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
+    imgShieldsLogo: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        msg: 'The imgShieldsLogo you entered already exists',
+      },
+      validate: {
+        notNull: {
+          msg: 'A imgShieldsLogo is required',
+        },
+        notEmpty: {
+          msg: 'Please provide a imgShieldsLogo',
+        },
+      },
+    },
     svgContent: {
       type: DataTypes.STRING,
       allowNull: false,
