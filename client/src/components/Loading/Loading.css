@@ -4,19 +4,31 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    /* Full viewport height */
 }
 
 .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #000;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
+    background-color: #7e7e7e;
+    animation: blink 1s infinite;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
     }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.loading p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #7e7e7e;
 }

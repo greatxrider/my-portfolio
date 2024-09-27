@@ -1,6 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
+// Animation
+import { useSpring, animated } from 'react-spring';
+import { useInView } from 'react-intersection-observer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Components
 import Work from "./Work";
@@ -8,8 +15,25 @@ import Education from "./Education";
 import Technologies from "./Technologies";
 
 const Experiences = () => {
+    const [ref, inView] = useInView({
+        triggerOnce: true, // Trigger the animation only once
+        threshold: 0.1, // Trigger when 10% of the component is visible
+    });
+
+    const animationProps = useSpring({
+        opacity: inView ? 1 : 0,
+        config: { duration: 1000 },
+    });
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true, // Whether animation should happen only once - while scrolling down
+        });
+    }, []);
+
     return (
-        <div className="experience-content" id="experience">
+        <animated.div ref={ref} style={animationProps} className="experience-content" id="experience">
             <h1 className="experience-title">Experiences & Education</h1>
             <div className="career-card-item">
                 <div className="avatar-container">
@@ -42,7 +66,7 @@ const Experiences = () => {
                 <Work />
                 <Technologies />
             </div>
-        </div>
+        </animated.div>
     );
 }
 

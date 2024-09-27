@@ -340,6 +340,17 @@ body {
         max-width: 400px;
         width: 100%;
     }
+
+    .job-title {
+        h1 {
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+
+            &:hover {
+                text-shadow: 0 0 5px rgba(9, 67, 133, 0.5), 0 0 10px #ffffff;
+                color: white;
+            }
+        }
+    }
 }
 
 .headline-container {
@@ -464,6 +475,7 @@ body {
     text-align: center;
     font-size: 2rem;
     text-decoration: underline;
+    margin-bottom: 40px;
     color: white;
 }
 
@@ -621,7 +633,7 @@ body {
 
 .experience-title {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     text-decoration: underline;
     color: white;
     text-align: center;
@@ -2680,6 +2692,16 @@ footer {
         .fa-icon {
             color: white;
             font-size: 18px;
+            transition: color 0.3s;
+
+            &:hover {
+                color: #2586f5;
+                cursor: pointer;
+            }
+
+            &:active {
+                color: #0068df;
+            }
         }
     }
 
