@@ -1,5 +1,5 @@
 const PortfolioContainer = ({ categories }) => {
-    
+
     const projects = categories.projects;
 
     return (

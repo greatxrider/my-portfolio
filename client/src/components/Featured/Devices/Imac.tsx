@@ -1,7 +1,7 @@
 const Imac = ({ project, modalKey }) => {
     return (
         <div className="project">
-            <div className="devices-container">
+            <div className="devices-container" data-aos="zoom-in">
                 <img src={project.imageUrlDesktop} alt="Screen" className="imac-screen-image" />
                 <img
                     src="/src/app/assets/png/iMacPro.png"
@@ -23,7 +23,7 @@ const Imac = ({ project, modalKey }) => {
                     <img src={project.imageUrlMobile} alt="iPhone Screen" className="iphone-screen-image" />
                 </div>
             </div>
-            <div className="project-description">
+            <div className="project-description" data-aos="zoom-in">
                 <h5>{project.title}</h5>
                 <p>{project.description}</p>
             </div>

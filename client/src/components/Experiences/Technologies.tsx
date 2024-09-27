@@ -87,7 +87,7 @@ const Technologies = () => {
     }
 
     return (
-        <div className="technologies-tools">
+        <div className="technologies-tools" data-aos="flip-right">
             <h6 className="technologies-title">— TECHNOLOGIES AND TOOLS</h6>
             <div className="technologies-info-container">
                 <div className="technologies-list">

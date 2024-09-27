@@ -93,7 +93,7 @@ const Education = () => {
 
     return (
         <>
-            <div className="education-item">
+            <div className="education-item" data-aos="flip-right">
                 <h6 className="education-title">— EDUCATION</h6>
                 {education.map((edu, index) => (
                     <div className="education-info-container" key={index}>

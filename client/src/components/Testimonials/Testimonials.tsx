@@ -8,6 +8,10 @@ import { api } from '../../utils/apiHelper';
 import Loading from "../Loading/Loading";
 import BasicRating from '../Rating';
 
+// Animation
+import { useSpring, animated } from 'react-spring';
+import { useInView } from 'react-intersection-observer';
+
 // Define types for the work data and errors
 interface TestimonialsItem {
     firstName: string;
@@ -24,6 +28,16 @@ interface ApiError {
 
 const Testimonials = () => {
     const navigate = useNavigate();
+
+    const [ref, inView] = useInView({
+        triggerOnce: true, // Trigger the animation only once
+        threshold: 0.1, // Trigger when 10% of the component is visible
+    });
+
+    const animationProps = useSpring({
+        opacity: inView ? 1 : 0,
+        config: { duration: 1000 },
+    });
 
     // State
     const [testimonials, setTestimonials] = useState<TestimonialsItem[]>([]);
@@ -109,7 +123,7 @@ const Testimonials = () => {
     }
 
     return (
-        <div className="testimonials-content">
+        <animated.div className="testimonials-content" ref={ref} style={animationProps}>
             <h1 className="testimonials-title">Testimonials</h1>
             <div className="testimonials-description">
                 <p>What other people say about me</p>
@@ -145,7 +159,7 @@ const Testimonials = () => {
             ) : (
                 <p>No testimonials available.</p>
             )}
-        </div>
+        </animated.div>
     );
 }
 

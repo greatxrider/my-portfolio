@@ -93,7 +93,7 @@ const Work = () => {
     }
 
     return (
-        <div className="work-history">
+        <div className="work-history" data-aos="flip-up">
             <h6 className="work-history-title">— WORK HISTORY</h6>
             {work.map((job, index) => (
                 <div className="work-info-container" key={index}>

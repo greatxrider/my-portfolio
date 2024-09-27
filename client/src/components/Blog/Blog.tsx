@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 // Utils
 import { api } from '../../utils/apiHelper';
 
+// Animation
+import { useSpring, animated } from 'react-spring';
+import { useInView } from 'react-intersection-observer';
+
 // Components
 import Loading from "../Loading/Loading";
 
@@ -22,6 +26,16 @@ interface ApiError {
 
 const Blog = () => {
     const navigate = useNavigate();
+
+    const [ref, inView] = useInView({
+        triggerOnce: true, // Trigger the animation only once
+        threshold: 0.1, // Trigger when 10% of the component is visible
+    });
+
+    const animationProps = useSpring({
+        opacity: inView ? 1 : 0,
+        config: { duration: 1000 },
+    });
 
     // State
     const [blogs, setBlogs] = useState<BlogsItem[]>([]);
@@ -106,7 +120,7 @@ const Blog = () => {
     }
 
     return (
-        <div className="blog-content">
+        <animated.div className="blog-content" ref={ref} style={animationProps}>
             <h1 className="blog-title">Personal Blog</h1>
             <div className="blog-description">
                 <p>
@@ -146,7 +160,7 @@ const Blog = () => {
             ) : (
                 loading ? <Loading /> : <p>No blogs available.</p>
             )}
-        </div>
+        </animated.div>
     );
 }
 
