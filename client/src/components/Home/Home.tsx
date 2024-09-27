@@ -16,7 +16,7 @@ const Home = ({ categories, projects }) => {
             <About />
             <Experiences />
             <Certifications />
-            <Portfolio categories={categories} />
+            <Portfolio categories={categories} projects={projects} />
             <Services />
             <Featured categories={categories} projects={projects} />
             <Testimonials />

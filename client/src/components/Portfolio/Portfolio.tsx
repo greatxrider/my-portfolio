@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import { NavLink, Outlet } from 'react-router-dom';
 
-const Portfolio = ({ categories }) => {
+const Portfolio = ({ categories, projects }) => {
     return (
         <div className="portfolio-content" id="portfolio">
             <h1 className="portfolio-title">Portfolio</h1>
@@ -18,11 +18,17 @@ const Portfolio = ({ categories }) => {
                     <p>Years of Experience</p>
                 </div>
                 <div className="stats-item projects-completed">
-                    <h3>21</h3>
+                    {
+                        projects.length > 0 ? (
+                            <h3>{projects.length}</h3>
+                        ) : (
+                            <h3>0</h3>
+                        )
+                    }
                     <p>Projects Completed</p>
                 </div>
                 <div className="stats-item happy-clients">
-                    <h3>8</h3>
+                    <h3>6</h3>
                     <p>Happy Clients</p>
                 </div>
                 <div className="stats-item project-done-container">
