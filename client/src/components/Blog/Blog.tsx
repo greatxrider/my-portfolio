@@ -24,6 +24,10 @@ interface ApiError {
     message: string;
 }
 
+declare interface JQuery<TElement = HTMLElement> {
+    owlCarousel(options?: any): JQuery;
+}
+
 const Blog = () => {
     const navigate = useNavigate();
 
