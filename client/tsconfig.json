@@ -17,5 +17,5 @@
     "types": ["vitest/globals", "jquery"]
   },
   "references": [{ "path": "./tsconfig.node.json" }],
-  "exclude": ["vite.config.js"]
+  "exclude": ["vite.config.js", "vite.config.ts"]
 }
