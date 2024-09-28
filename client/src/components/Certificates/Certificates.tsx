@@ -8,7 +8,6 @@ import { formatDate } from '../../utils/dateFormatter';
 
 // Components
 import Loading from "../Loading/Loading";
-import { i } from "vitest/dist/reporters-yx5ZTtEV.js";
 
 // Define types for the education data and errors
 interface Certificate {
