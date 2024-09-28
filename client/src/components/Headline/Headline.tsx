@@ -100,7 +100,7 @@ const Headline = () => {
                         <div className="cta-buttons">
                             <Link
                                 className="hello-button"
-                                to={'#contact'}
+                                to={'https://drive.google.com/file/d/1rfTUWuaL1NQMfjUUFxgcSriHAKXFl-2n/view?usp=sharing'}
                                 target="_blank"
                                 rel="noopener noreferrer">Download Resume</Link>
                             <Link

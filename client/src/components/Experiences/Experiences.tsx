@@ -54,7 +54,9 @@ const Experiences = () => {
                                 <FontAwesomeIcon icon={faArrowRight} />
                             </button>
                         </a>
-                        <Link to={"/har"} style={{ textDecoration: 'none' }}>
+                        <Link to={"https://drive.google.com/file/d/1rfTUWuaL1NQMfjUUFxgcSriHAKXFl-2n/view?usp=sharing"} style={{ textDecoration: 'none' }}
+                            target="_blank"
+                            rel="noopener noreferrer">
                             <button className="experience-resume-button">
                                 Download Resume
                                 <FontAwesomeIcon icon={faDownload} />
