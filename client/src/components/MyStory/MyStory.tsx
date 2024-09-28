@@ -7,15 +7,15 @@ const MyStory = () => {
                 <div className="mystory-dailyRoutine-content">
                     <div className="mystory-dailyRoutine-row">
                         <div className="mystory-dailyRoutine-imageContainer-D">
-                            <img src="/src/app/assets/png/dailyRoutine.png" alt="Daily Routine" />
+                            <img src="/assets/png/dailyRoutine.png" alt="Daily Routine" />
                         </div>
                         <div className="mystory-dailyRoutine-imageContainer-G">
-                            <img src="/src/app/assets/png/ganttChart.png" alt="Gantt Chart" />
+                            <img src="/assets/png/ganttChart.png" alt="Gantt Chart" />
                         </div>
                     </div>
                     <div className="mystory-dailyRoutine-row">
                         <div className="mystory-dailyRoutine-imageContainer-T">
-                            <img src="/src/app/assets/png/toDo.png" alt="To Do" />
+                            <img src="/assets/png/toDo.png" alt="To Do" />
                         </div>
                         <div className="mystory-dailyRoutine-textContainer-p">
                             <p>For all my peers who are also on the journey of changing careers or finding their path, I believe all of you, my brothers, can relate to what I have done similar to here. It was a turning point and one of the most unforgettable enjoyable moments of my life. I truly felt alive during those times when I was just starting to change my life.</p>
@@ -32,10 +32,10 @@ const MyStory = () => {
                 <div className="mystory-workingOut-content">
                     <div className="mystory-workingOut-row">
                         <div className="mystory-workingOut-imageContainer-w">
-                            <img src="/src/app/assets/png/gym.JPG" alt="Working Out" />
+                            <img src="/assets/png/gym.JPG" alt="Working Out" />
                         </div>
                         <div className="mystory-workingOut-imageContainer-g">
-                            <img src="/src/app/assets/png/9025.jpg" alt="Gym" />
+                            <img src="/assets/png/9025.jpg" alt="Gym" />
                         </div>
                     </div>
                     <div className="mystory-workingOut-row">
@@ -52,10 +52,10 @@ const MyStory = () => {
                 <div className="mystory-workSetup-content">
                     <div className="mystory-workSetup-row">
                         <div className="mystory-workSetup-imageContainer-ws">
-                            <img src="/src/app/assets/png/workSetup.JPG" alt="Work Setup" />
+                            <img src="/assets/png/workSetup.JPG" alt="Work Setup" />
                         </div>
                         <div className="mystory-workSetup-imageContainer-h">
-                            <img src="/src/app/assets/png/hero.JPG" alt="Hero" />
+                            <img src="/assets/png/hero.JPG" alt="Hero" />
                         </div>
                     </div>
                     <div className="mystory-workSetup-row">

@@ -13,7 +13,7 @@ const MacPro = ({ project, modalKey }) => {
                 />
                 <div className="iphone-container">
                     <img
-                        src="/src/app/assets/png/iphone.png"
+                        src="/assets/png/iphone.png"
                         alt="Iphone"
                         className="iphone-image"
                         data-bs-toggle="modal"

@@ -40,7 +40,7 @@ const Experiences = () => {
                     <div className="avatar-container">
                         <svg className="bd-placeholder-img rounded-circle" width="120" height="120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar" preserveAspectRatio="xMidYMid slice" focusable="false">
                             <title>Avatar</title>
-                            <image href="/src/app/assets/png/avatar2.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="circle(50%)" />
+                            <image href="/assets/png/avatar2.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="circle(50%)" />
                         </svg>
                     </div>
                     <div className="experience-details">
