@@ -35,12 +35,12 @@ const Services = () => {
                     <div className="services-image" data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="2000">
-                        <img src="/src/app/assets/png/design-process.png" alt="Design Process" />
+                        <img src="/assets/png/design-process.png" alt="Design Process" />
                     </div>
                     <div className="services-list">
                         <div className="service-item" data-aos="flip-left">
                             <div className="service-image">
-                                <img src="/src/app/assets/png/fullStackFrame.png" alt="Full Stack Frame" />
+                                <img src="/assets/png/fullStackFrame.png" alt="Full Stack Frame" />
                             </div>
                             <div className="service-title">
                                 <h5>Full Stack Development</h5>
@@ -51,7 +51,7 @@ const Services = () => {
                         </div>
                         <div className="service-item" data-aos="flip-up">
                             <div className="service-image">
-                                <img src="/src/app/assets/png/uiUxFrame.png" alt="UI/UX Frame" />
+                                <img src="/assets/png/uiUxFrame.png" alt="UI/UX Frame" />
                             </div>
                             <div className="service-title">
                                 <h5>UI/UX Design</h5>
@@ -62,7 +62,7 @@ const Services = () => {
                         </div>
                         <div className="service-item" data-aos="flip-right">
                             <div className="service-image">
-                                <img src="/src/app/assets/png/mobileAppDevFrame.png" alt="Mobile Dev Frame" />
+                                <img src="/assets/png/mobileAppDevFrame.png" alt="Mobile Dev Frame" />
                             </div>
                             <div className="service-title">
                                 <h5>Mobile App Development</h5>

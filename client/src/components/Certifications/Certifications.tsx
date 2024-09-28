@@ -37,7 +37,7 @@ const Certifications = () => {
                         </p>
                     </div>
                     <div className="certifications-image">
-                        <img src="/src/app/assets/png/beaming-face.png" alt="Beaming Face" />
+                        <img src="/assets/png/beaming-face.png" alt="Beaming Face" />
                     </div>
                     <div className="certifications-action">
                         <button type="button" className="certifications-request-button" onClick={handleClick}>Certificates</button>

@@ -4,7 +4,7 @@ const MacPro = ({ project, modalKey }) => {
             <div className="devices-container" data-aos="zoom-in">
                 <img src={project.imageUrlDesktop} alt="Screen" className="macpro-screen-image" />
                 <img
-                    src="/src/app/assets/png/macpro.png"
+                    src="/assets/png/macpro.png"
                     alt="MacBook Pro"
                     className="macpro-image"
                     data-bs-toggle="modal"
