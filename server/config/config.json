@@ -8,11 +8,7 @@
     "storage": "myPortfolio-restapi.db"
   },
   "production": {
-    "username": "your_postgres_username",
-    "password": "your_postgres_password",
-    "database": "myPortfolio-restapi",
-    "host": "your_postgres_host",
-    "port": 5432,
-    "dialect": "postgres"
+    "dialect": "sqlite",
+    "storage": "myPortfolio-restapi.db"
   }
 }
