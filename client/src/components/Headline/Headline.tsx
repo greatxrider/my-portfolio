@@ -105,7 +105,7 @@ const Headline = () => {
                                 rel="noopener noreferrer">Download Resume</Link>
                             <Link
                                 className="view-button"
-                                to={'https://my-portfolio-site-in-node-express.vercel.app/'}
+                                to={'https://jeph-daligdig-portfolio.vercel.app/'}
                                 target="_blank"
                                 rel="noopener noreferrer">View Portfolio <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                             </Link>
