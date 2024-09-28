@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Instagram = ({ className }) => {
     return (
-        <Link to={"https://github.com/"} target="_blank" rel="noopener noreferrer">
+        <Link to={"https://www.instagram.com/imyouritguy/"} target="_blank" rel="noopener noreferrer">
             <svg className={className} width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)" />
                 <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)" />
