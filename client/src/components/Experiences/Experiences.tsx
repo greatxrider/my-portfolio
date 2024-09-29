@@ -54,7 +54,7 @@ const Experiences = () => {
                                 <FontAwesomeIcon icon={faArrowRight} />
                             </button>
                         </a>
-                        <Link to={"https://drive.google.com/file/d/1rfTUWuaL1NQMfjUUFxgcSriHAKXFl-2n/view?usp=sharing"} style={{ textDecoration: 'none' }}
+                        <Link to={"https://drive.google.com/file/d/1a93ydnQ50_D8jOW3aIGhq_OuJdM8QNyO/view?usp=sharing"} style={{ textDecoration: 'none' }}
                             target="_blank"
                             rel="noopener noreferrer">
                             <button className="experience-resume-button">
