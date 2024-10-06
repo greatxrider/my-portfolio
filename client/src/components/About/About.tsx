@@ -43,13 +43,12 @@ const About = () => {
                     <div className="content-container">
                         <div className="description-section">
                             <p>
-                                I am Jeph Daligdig, a Full Stack Developer dedicated to helping
-                                businesses grow and excel in the digital market through
-                                comprehensive web and mobile app development. I specialize in
-                                building websites, software, and mobile applications, offering
-                                expertise in web design, front-end, back-end, and mobile app
-                                development. With a diverse skill set and extensive knowledge of
-                                software tools, I am well-equipped to meet your needs.
+                                I'm Jeph, a Developer based in the Philippines. I started as a Mechanical Technician, then became an Electronics Engineer, and now I’m a Developer.
+                                It may seem like an unusual path, but those experiences helped me discover where my true strengths and passions lie — in being a Developer.
+                                I’ve always loved programming, but what really inspired me to pursue it was the humble and helpful attitude of the Developers I knew.
+                                I realized their mindset came from programming, and that led me to become a Developer myself. I want to work with people who share the same mindset.
+
+                                I taught myself how to code, took online courses, and focused on Full Stack Development.
                             </p>
                             <h5>daligdig.jephmari@gmail.com</h5>
                             <div className="description-action">
