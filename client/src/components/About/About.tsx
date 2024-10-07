@@ -43,12 +43,11 @@ const About = () => {
                     <div className="content-container">
                         <div className="description-section">
                             <p>
-                                I'm Jeph, a Developer based in the Philippines. I started as a Mechanical Technician, then became an Electronics Engineer, and now I’m a Developer.
+                                I'm Jeph, a Developer based in the Philippines. My journey began as a Mechanical Technician, followed by studying Electronics Engineering, but I started coding as soon as I finished my studies.
                                 It may seem like an unusual path, but those experiences helped me discover where my true strengths and passions lie — in being a Developer.
-                                I’ve always loved programming, but what really inspired me to pursue it was the humble and helpful attitude of the Developers I knew.
-                                I realized their mindset came from programming, and that led me to become a Developer myself. I want to work with people who share the same mindset.
+                                I’ve always had a love for programming, but what truly inspired me was the humble and supportive attitude of the Developers I encountered. Their mindset, rooted in the world of programming, motivated me to embrace this career myself, and I aspire to work alongside like-minded individuals.
 
-                                I taught myself how to code, took online courses, and focused on Full Stack Development.
+                                I taught myself to code, pursued online education, freelancing and focused on Full Stack Development, which has equipped me with the skills to contribute effectively in this field.
                             </p>
                             <h5>daligdig.jephmari@gmail.com</h5>
                             <div className="description-action">
