@@ -71,7 +71,7 @@ const About = () => {
                                 </p>
                             </div>
                             <div className="mobile-app-dev" data-aos="flip-left">
-                                <MobileDev />
+                                <MobileDev /> 
                                 <h5>Mobile App Development</h5>
                                 <p>Innovative mobile apps for iOS and Android platforms</p>
                             </div>
