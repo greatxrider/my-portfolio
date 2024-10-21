@@ -43,11 +43,10 @@ const About = () => {
                     <div className="content-container">
                         <div className="description-section">
                             <p>
-                                I'm Jeph, a Developer based in the Philippines. My journey began as a Mechanical Technician, followed by studying Electronics Engineering, but I started coding as soon as I finished my studies.
-                                It may seem like an unusual path, but those experiences helped me discover where my true strengths and passions lie — in being a Developer.
-                                I’ve always had a love for programming, but what truly inspired me was the humble and supportive attitude of the Developers I encountered. Their mindset, rooted in the world of programming, motivated me to embrace this career myself, and I aspire to work alongside like-minded individuals.
-
-                                I taught myself to code, pursued online education, freelancing and focused on Full Stack Development, which has equipped me with the skills to contribute effectively in this field.
+                                I'm Jeph, a Software Engineer from the Philippines who focuses on Python and JavaScript.
+                                I use these languages to build practical solutions for both front-end and back-end projects.
+                                I enjoy creating smooth user experiences and making sure everything runs efficiently.
+                                I’m always looking to improve my skills and deliver great work in everything I do.
                             </p>
                             <h5>daligdig.jephmari@gmail.com</h5>
                             <div className="description-action">
@@ -71,7 +70,7 @@ const About = () => {
                                 </p>
                             </div>
                             <div className="mobile-app-dev" data-aos="flip-left">
-                                <MobileDev /> 
+                                <MobileDev />
                                 <h5>Mobile App Development</h5>
                                 <p>Innovative mobile apps for iOS and Android platforms</p>
                             </div>
